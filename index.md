@@ -1,6 +1,9 @@
 ---
 layout: default
-title: Home
+title: "Virksaab | Home"
+---
+
+<h1 style="text-align: center;"> About me </h1>
 ---
 
 ### **Jitender Singh Virk**
