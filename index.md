@@ -21,12 +21,14 @@ CGPA - 7.24/10 (First class 'distinction')
 JECRC University, Jaipur, Rajasthan, India - 303905
 
 ---
+**Major Project  (15 May 2019 to present): “YAMLF - Yet Another Machine Learning Framework”**  
+YAMLF is a PyTorch based light-weight Supervised and Semi-Supervised Machine Learning model training and evaluation Python 3 module. It provides helper functions and classes for easy management of the training procedure. It provides the fundamental tools that we write again and again for every model training like training loop, evaluation, setting schedulers, recording loss and metrics, etc. This module sits inbetween PyTorch's flexible but long code process and Keras' high-level api. It's as flexible as PyTorch but eliminates the code redundancy. There are 5 steps to train a model - set hyperparameters, make dataset class, create dataloaders, make model, and train. Each step is replaceable with plain PyTorch. [Code](https://github.com/VirkSaab/YAMLF)
+
 **Major Project  (5 October 2018 to 22 January 2019): “GARUDA - An Android app for danger detection in the background while taking selfies”**  
 This app can alert the user by detecting the level of the danger in the background while capturing selfies. It is based on a custom deep Convolutional Neural Network (CNN). The prediction is performed as a 5 class classification problem with classes representing a different level of danger. Face detection and device orientation information are also used for robustness and lesser battery consumption. The dataset used for training and evaluation consists of a total of 22019 images collected using web scraping. Most of the images are selfies. We manually assigned a label out of 5 categories to each image.  
 News links: [Time of India](https://timesofindia.indiatimes.com/city/chandigarh/application-to-prevent-selfie-deaths/articleshow/66563387.cms),
 [Gadgets now](https://www.gadgetsnow.com/tech-news/iit-ropar-develops-app-to-prevent-selfie-deaths/articleshow/66565825.cms),
 [BBC Telugu Click](https://www.youtube.com/watch?v=Wpn933W0yOI&feature=youtu.be&t=245), [BBC Click Tamil](https://www.youtube.com/watch?v=DJub5OCKC8g&feature=youtu.be&t=195).  
-Results: 89.28% evaluation accuracy.
 
 **Major Project  (17 August 2018 to 15 January 2019): “Automatic Collage Maker Android App”**  
 It includes an automatic collage making process of given images using a Computer Vision saliency detection algorithm as a backbone. Saliency algorithm is used to detect the salient region of an image. An energy minimization algorithm is used to position similar colour range images closer to each other so that the transition between images look smoother. The resultant collage also contains the metadata of each image, which can be used to backtrack to the original images just by touch/click on the resultant collage image.
