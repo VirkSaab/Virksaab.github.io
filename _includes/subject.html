@@ -1,0 +1,32 @@
+<div id="accordion">
+
+  {% for post in site.posts %}
+    {% if post.subject == page.name %}
+
+      <div class="card bg-dark border-secondary">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link text-white dropdown-toggle" data-toggle="collapse" data-target="#{{ post.section | slugify}}" aria-expanded="false" aria-controls="collapseOne">
+              {{ post.section }}
+            </button>
+          </h5>
+        </div>
+        <div id="{{ post.section | slugify}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <div class="list-group">
+              {% for item in site.posts %}
+                {% if item.subject == page.name %}
+
+                  <a href="{{ item.url }}" class="list-group-item list-group-item-action bg-secondary text-white">{{ item.title }}</a>
+
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    {% endif %}
+  {% endfor %}
+
+</div>

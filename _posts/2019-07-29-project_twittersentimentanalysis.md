@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Twitter Sentiment Analysis"
+type: "Projects"
 author: Jitender Singh Virk
 ---
 

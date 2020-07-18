@@ -1,26 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom">
-  <button class="btn btn-light" id="menu-toggle">Toggle Project Menu</button>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom pt-1 pb-0">
+  {% if (page.layout != "default") and (page.layout != "worktree") %}
+    <button class="btn btn-light" id="menu-toggle">Toggle Menu</button>
+  {% endif %}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon rounded" style="background-color: #f8f9fa;"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link text-light pr-5" href="/"><strong>Home</strong></a>
-      </li>
+      {% for nav in site.data.navigation %}
+          <li class="nav-item active pl-2">
+            <a class="nav-link text-light" href="{{ nav.link }}"><strong>{{ nav.name }}</strong></a>
+          </li>
+      {% endfor %}
+      <a class="pr-5" href="/"></a> <!-- horizontal space -->
       <li class="nav-item">
         <a class="nav-link text-light" href="https://github.com/VirkSaab" target="_blank">GitHub</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="https://www.linkedin.com/in/jsv47/" target="_blank">LinkedIn</a>
+        <a class="nav-link" style="color: rgb(0, 155, 255);" href="https://www.linkedin.com/in/jsv47/" target="_blank">LinkedIn</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="https://www.researchgate.net/profile/Jitender_Virk2" target="_blank">ResearchGate</a>
+        <a class="nav-link" style="color: rgb(0, 255, 226);" href="https://www.researchgate.net/profile/Jitender_Virk2" target="_blank">ResearchGate</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="https://orcid.org/0000-0002-8730-4722" target="_blank">ORCiD</a>
+        <a class="nav-link" style="color: lime;" href="https://orcid.org/0000-0002-8730-4722" target="_blank">ORCiD</a>
       </li>
 
       <!-- <li class="nav-item">

@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Home Automation"
+type: "Projects"
 author: Jitender Singh Virk
 ---
 

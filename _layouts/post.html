@@ -14,7 +14,7 @@
         <h1 class="mt-4">{{page.title}}</h1>
           <div class="container-fluid pt-3 pl-3 pr-3 pb-3 text-justify" style="font-size: larger;">
             {{ content }}
-            {% if page.type == "notebook" %}
+            {% if page.isembed == "yes" %}
               <iframe id="iframe" src="{{page.notebook_url}}" style="width:100%; min-height: 40rem; border:none;"></iframe>
               <!-- <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="{{page.notebook_url}}" allowfullscreen></iframe>

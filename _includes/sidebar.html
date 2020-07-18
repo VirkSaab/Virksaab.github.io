@@ -1,17 +1,32 @@
 <!-- Sidebar -->
 <div class="bg-dark" id="sidebar-wrapper">
   <div class="sidebar-heading text-light">
-    <h1> Projects </h1>
+    <h1>
+      {% if page.layout == "default" %}
+        {{ page.title }}
+      {% else %}
+        <a href="/{{page.type | downcase }}" style="color: snow;">{{ page.type }}</a>
+      {% endif %}
+    </h1>
   </div>
 
   <div class="list-group list-group-flush">
     <span class="border-top border-light"></span>
-    {% for post in site.posts %}
-      <span class="border-bottom border-light">
-        <a href="{{ post.url }}" class="list-group-item list-group-item-action bg-dark text-light">{{ post.title }}</a>
-      </span>
-    {% endfor %}
-
+    {% if page.title == "Home" %}
+      {% for nav in site.data.navigation %}
+        <span class="border-bottom border-light">
+          <a href="{{ nav.link }}" class="list-group-item list-group-item-action bg-dark text-light">{{ nav.name }}</a>
+        </span>
+      {% endfor %}
+    {% else %}
+      {% for post in site.posts %}
+        {% if post.type == page.type %}
+          <span class="border-bottom border-light">
+            <a href="{{ post.url }}" class="list-group-item list-group-item-action bg-dark text-light">{{ post.title }}</a>
+          </span>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
   </div>
 </div>
 <!-- /#sidebar-wrapper -->

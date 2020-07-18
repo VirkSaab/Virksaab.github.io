@@ -1,12 +1,213 @@
 ---
 layout: default
-title: "Virksaab | Home"
+title: "Home"
 ---
 
-<h1 style="text-align: center;"> About me </h1>
+<h1 class="text-center"> Jitender Singh Virk </h1>
+<h5 class="text-center text-muted">Deep Learning Project Assistant, CSE Department, IIT Ropar</h5>
 ---
 
-### **Jitender Singh Virk**
+<h4 class="text-center"> EDUCATION </h4>
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan - 303905</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft mb-0">Bachelor of Technology</p>
+  <p class="alignright mb-0">July 2013 - July 2017</p>
+</div>
+<div style="clear: both;"></div>
+
+Computer Science and Engineering, CGPA 7.24/10
+* Dissertation: Real-time Twitter Sentiment Analysis with Big Data and Hadoop Ecosystem
+* Undergrad term projects: 7th semester - Teacher Review System [(code)](https://github.com/VirkSaab/Teacher-Review-System); 6th semester - Home
+Automation System ([code](https://github.com/VirkSaab/Home-Automation), [extension](https://github.com/VirkSaab/Car-Parking-Alarm-System))
+
+---
+
+<h4 class="text-center"> EXPERIENCE </h4>
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
+  <p class="alignright mb-0">Rupnagar, Punjab</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Deep Learning Project Assistant, CBIL Lab</p>
+  <p class="alignright mb-0">Mar 2019 - Present</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed a lite PyTorch based Machine Learning Python module named YAMLF for easy neural
+networks training and testing ([code](https://github.com/VirkSaab/YAMLF))
+* Researched light-weight mixed-kernels neural network for medical diagnosis problems
+* Organized, collected, and cleaned ~1.5TB unlabeled CT scans dataset for semi-supervised
+training
+* Researched Alzheimer’s disease and Control Normal classification using ADNI dataset
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
+  <p class="alignright mb-0">Rupnagar, Punjab</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Computer Vision and Deep Learning Research Assistant, LASII group</p>
+  <p class="alignright mb-0">Aug 2018 - Feb 2019</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed Computer Vision based automatic collage maker Android app in collaboration with
+Samsung India
+* Developed Deep Learning based background danger detection while taking selfies Android app
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Savera.ai startup (Sungineers Energy Private Limited)</p>
+  <p class="alignright mb-0">Work from home</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Machine Learning and Computer Vision Innovation Fellow</p>
+  <p class="alignright mb-0">July 2018 - Dec 2018</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed Indian building’s rooftop segmentation model with satellite images ([code](https://github.com/SaveraLLC/Indian-rooftops-detection))
+* Presented data cleaning, preprocessing, training and postprocessing end-to-end pipeline for
+building’s rooftop detection and segmentation
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Axis India Machine Learning Lab</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">AI Research Fellow</p>
+  <p class="alignright mb-0">Aug 2017 - May 2018</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed road lane detection in real-time GTA 5 video game (code)
+* Studied Computer Vision, Machine Learning, Deep Learning, and Reinforcement Learning
+fundamentals
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Headstart Education | IBM Bussiness Partner</p>
+  <p class="alignright mb-0">New Delhi, India</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Undergraduate Intern</p>
+  <p class="alignright mb-0">Feb 2017 - July 2017</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed real-time Twitter sentiment analysis using Big Data and Hadoop ([code](https://github.com/VirkSaab/Twitter-Sentiment-Analysis))
+
+---
+
+<h4 class="text-center"> PUBLICATIONS </h4>
+
+
+* **Jitender Singh Virk** and Deepti R. Bathula. “Domain Specific, Semi-Supervised Transfer
+Learning for Medical Imaging”. CODS-COMAD 2021 (submitted). [preprint](https://arxiv.org/abs/2005.11746).
+* **Jitender Singh Virk**, Syed Azmal Ali, and Gurjeet Kaur. “Recent update on COVID-19 in India: Is
+locking down the country enough”. [medRxiv](https://doi.org/10.1101/2020.04.06.20053124).
+* **Jitender Singh Virk** and Abhinav Dhall. “Garuda: A Deep Learning-Based Solution for Capturing
+Selfies Safely” ACM IUI 2019. [IUI](https://doi.org/10.1145/3308557.3308669), [demo](https://sites.google.com/iitrpr.ac.in/garuda), [Times of India (TOI)](https://timesofindia.indiatimes.com/city/chandigarh/application-to-prevent-selfie-deaths/articleshow/66563387.cms),
+[Gadgets now](https://www.gadgetsnow.com/tech-news/iit-ropar-develops-app-to-prevent-selfie-deaths/articleshow/66565825.cms).
+* Rudradeb Mitra, **Jitender Singh Virk**, and Iresh Mishra. “Increasing solar adoption in the
+developing world by analyzing low-resolution Satellite images using Machine Learning”.
+[medium.com](https://medium.com/savera-ai/using-machine-learning-semantic-segmentation-to-identify-rooftops-in-low-resolution-satellite-54a900137e10); [datasciencecentral.com](https://www.datasciencecentral.com/profiles/blogs/using-semantic-segmentation-to-identify-rooftops-in-low).
+
+---
+
+<h4 class="text-center"> SKILLS </h4>
+
+* **Programming Languages and Technologies**: Python, C++, Java, R, MS SQL Server, Bootstrap4, CSS3, HTML5, and markdown
+* **Tools and frameworks**: PyTorch, Keras, TensorFlow, Jupyter, Android, and Jekyll
+* **Languages**: English (fluent), Hindi (fluent), and Punjabi (native)
+* **Other skills**: Photography ([samples](https://500px.com/krivsj)), Adobe Photoshop, Adobe Lightroom, Internet of Things
+(IoT), Raspberry Pi, Arduino, and Bhangra (Punjabi folk dance)
+
+---
+
+<h4 class="text-center"> LEADERSHIP AND TEAMWORK EXPERIENCE </h4>
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Sikkim Manipal Institute of Technology</p>
+  <p class="alignright mb-0">Majitar, East Sikkim</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Machine Learning Workshop Assistant speaker</p>
+  <p class="alignright mb-0">21-23 Aug 2017</p>
+</div>
+<div style="clear: both;"></div>
+
+* Invited assistant speaker for three days Machine Learning workshop
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">JU Rhythm (techno-cultural fest), RC Car event Head-Coordinator</p>
+  <p class="alignright mb-0">Mar 2016</p>
+</div>
+<div style="clear: both;"></div>
+
+* Organized two days National Level RC racing car event
+* Designed and Deployed National Level RC car racing event Arena of size 110ft x 94ft
+* Managed 20 volunteers team to build the arena in 15 days
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">JU Rhythm (techno-cultural fest), RC Car event Arena-Coordinator</p>
+  <p class="alignright mb-0">Feb 2015</p>
+</div>
+<div style="clear: both;"></div>
+
+* Designed and Deployed National Level RC car racing event Arena of size 70ft x 80ft
+
+
+---
+`That's all.`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ### **Jitender Singh Virk**
       Deep Learning Project Assistant
       Indian Institute of Technology Ropar, Punjab - 140001
       Contact Number: +919050196993
@@ -103,8 +304,8 @@ Duration: 1 February 2017 to 20 July 2017.
 
 * Programming Languages and Tools.
   * Python, R, C++, JAVA
-  * Bootstrap, CSS, and HTML5
-  * Git
+  * Markdown, Bootstrap, CSS, and HTML5
+  * Git, Jupyter
   * Android
 
 * AI Frameworks
@@ -122,7 +323,4 @@ Duration: 1 February 2017 to 20 July 2017.
 * Internet of Things(IoT), Raspberry Pi, Arduino
 * Bhangra(Punjabi folk dance)
 * Languages English (fluent), Hindi (fluent), Punjabi (Mother Tongue).
-* Efficient, organized, reliable, team player, fast learner, highly motivated, gets the job done on time.
-
----
-`That's all.`
+* Efficient, organized, reliable, team player, fast learner, highly motivated, gets the job done on time. -->

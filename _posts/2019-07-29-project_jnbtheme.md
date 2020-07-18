@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Flat theme for Jupyter Notebook"
+type: "Projects"
 author: Jitender Singh Virk
 ---
 

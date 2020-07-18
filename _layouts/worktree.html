@@ -1,0 +1,52 @@
+{% include head.html %}
+
+<body>
+
+  <div class="d-flex" id="wrapper">
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      {% include navbar.html %}
+      {% if page.title == "Work Tree" %}
+        <div class="container-fluid pt-3 pl-3 pr-3 pb-3 text-justify">
+          {{ content }}
+        </div>
+      {% endif %}
+      <div class="container-fluid">
+        <div class="row justify-content-center align-items-start">
+          {% for subject in site.subjects %}
+            <div class="col-sm pb-2">
+              <div class="card text-white bg-dark">
+                <div class="card-header pb-0"><h5>{{ subject.name }}</h5></div>
+                <div class="card-body pt-1">
+                  <p class="card-text">{{ subject.content }}</p>
+                </div>
+              </div>
+
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.js"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+</body>
+
+</html>

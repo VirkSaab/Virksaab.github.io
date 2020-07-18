@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Web Crawler"
+type: "Projects"
 author: Jitender Singh Virk
 ---
 

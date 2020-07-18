@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Car Parking Alarm System"
+type: "Projects"
 author: Jitender Singh Virk
 ---
 
