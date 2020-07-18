@@ -12,13 +12,7 @@
 
   <div class="list-group list-group-flush">
     <span class="border-top border-light"></span>
-    {% if page.title == "Home" %}
-      {% for nav in site.data.navigation %}
-        <span class="border-bottom border-light">
-          <a href="{{ nav.link }}" class="list-group-item list-group-item-action bg-dark text-light">{{ nav.name }}</a>
-        </span>
-      {% endfor %}
-    {% else %}
+
       {% for post in site.posts %}
         {% if post.type == page.type %}
           <span class="border-bottom border-light">
@@ -26,7 +20,7 @@
           </span>
         {% endif %}
       {% endfor %}
-    {% endif %}
+      
   </div>
 </div>
 <!-- /#sidebar-wrapper -->
