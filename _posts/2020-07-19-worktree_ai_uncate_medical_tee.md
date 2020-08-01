@@ -8,6 +8,10 @@ title:  "Treatment Effect Estimation (TEE)"
 author: Jitender Singh Virk
 ---
 
+<sup>last updated: {{ page.date | date: "%d %b, %Y" }} || Author: {{ page.author }}</sup>
+
+---
+
 
 <p style="background: #eeeeee;">
 Note: The paragraph in little dark color background represents small terms or concepts used in the main concepts.</p>
@@ -30,6 +34,9 @@ We use *p* value along with ARR to analyse the significance of our trail results
 <p style="background: #eeeeee;">
 <b>p value</b> Lower the p value greater the significance. Higher individual in trial means better p value.
 </p>
+
+
+### Modeling Treatment Effect
 
 
 

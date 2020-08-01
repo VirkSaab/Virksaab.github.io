@@ -22,7 +22,9 @@ title: "Home"
 
 Computer Science and Engineering, CGPA 7.24/10
 * Dissertation: Real-time Twitter Sentiment Analysis with Big Data and Hadoop Ecosystem
-* Undergrad term projects: 7th semester - Teacher Review System [(code)](https://github.com/VirkSaab/Teacher-Review-System); 6th semester - Home
+* Undergrad term projects:
+  - 7th semester - Teacher Review System [(code)](https://github.com/VirkSaab/Teacher-Review-System)
+  - 6th semester - Home
 Automation System ([code](https://github.com/VirkSaab/Home-Automation), [extension](https://github.com/VirkSaab/Car-Parking-Alarm-System))
 
 ---
@@ -91,7 +93,7 @@ building’s rooftop detection and segmentation
 </div>
 <div style="clear: both;"></div>
 
-* Developed road lane detection in real-time GTA 5 video game (code)
+* Developed road lane detection in real-time GTA 5 video game ([code](https://github.com/VirkSaab/Lane-detection-in-GTA-5-Video-Game))
 * Studied Computer Vision, Machine Learning, Deep Learning, and Reinforcement Learning
 fundamentals
 
@@ -120,7 +122,7 @@ Learning for Medical Imaging”. CODS-COMAD 2021 (submitted). [preprint](https:/
 locking down the country enough”. [medRxiv](https://doi.org/10.1101/2020.04.06.20053124).
 * **Jitender Singh Virk** and Abhinav Dhall. “Garuda: A Deep Learning-Based Solution for Capturing
 Selfies Safely” ACM IUI 2019. [IUI](https://doi.org/10.1145/3308557.3308669), [demo](https://sites.google.com/iitrpr.ac.in/garuda), [Times of India (TOI)](https://timesofindia.indiatimes.com/city/chandigarh/application-to-prevent-selfie-deaths/articleshow/66563387.cms),
-[Gadgets now](https://www.gadgetsnow.com/tech-news/iit-ropar-develops-app-to-prevent-selfie-deaths/articleshow/66565825.cms).
+[Gadgets Now](https://www.gadgetsnow.com/tech-news/iit-ropar-develops-app-to-prevent-selfie-deaths/articleshow/66565825.cms).
 * Rudradeb Mitra, **Jitender Singh Virk**, and Iresh Mishra. “Increasing solar adoption in the
 developing world by analyzing low-resolution Satellite images using Machine Learning”.
 [medium.com](https://medium.com/savera-ai/using-machine-learning-semantic-segmentation-to-identify-rooftops-in-low-resolution-satellite-54a900137e10); [datasciencecentral.com](https://www.datasciencecentral.com/profiles/blogs/using-semantic-segmentation-to-identify-rooftops-in-low).
