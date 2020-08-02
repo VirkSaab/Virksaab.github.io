@@ -2,7 +2,7 @@
 layout: post
 type: "WorkTree"
 area: "AI"
-subject: "Uncategorized"
+subject: "Concepts"
 section: "Medical"
 title:  "Treatment Effect Estimation (TEE)"
 author: Jitender Singh Virk

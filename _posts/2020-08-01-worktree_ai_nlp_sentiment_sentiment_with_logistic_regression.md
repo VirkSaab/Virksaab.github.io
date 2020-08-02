@@ -4,7 +4,7 @@ type: "WorkTree"
 area: "AI"
 subject: "Natural Language Processing (NLP)"
 section: "Sentiment Analysis"
-title:  "Tweet Sentiment Analysis with Logistic Regression"
+title:  "Tweet Sentiment Analysis with Logistic Regression - 1"
 author: Jitender Singh Virk
 ---
 
