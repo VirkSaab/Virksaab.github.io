@@ -18,12 +18,13 @@ Download this notebook from [here](https://gist.github.com/VirkSaab/f5de2b5f83df
 
 ---
 
+
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Sentiment Analysis</strong>: Given a sentence, analysing whether the sentence is sad, happy, angry, etc. For example, <em>Woho! I got selected in Harvard university!</em> reflects happy sentiment. <em>I lost my phone in subway</em> reflects sad sentiment. Usually, we use tweets data for sentiment analysis but, ofcourse, you can use any type of data.</p>
-<p>We cannot use raw words as inputs to any machine learning model because data must be numerical. To convert text data into numerical we use <em>vocabulary</em>.</p>
-<p><strong>Vocabulary</strong>: It is a set of unique words that appear in the data. Usually, we build this vocab from training data but we can use predefined vocabulary as well. For this project, we'll build it from scratch. Vocabulary is required to create features from words and sentences to train a model. For example, <em>I lost my phone in subway. I am stupid.</em> will create a vocabulary that contains I, lost, my, phone, in, subway, am, stupid. Now, there are several ways to create features from these words.</p>
+<p><strong>Sentiment Analysis</strong>: Given a sentence, analysing whether the sentence is sad, happy, angry, etc. For example, <em>Woho! I got selected in Harvard university!</em> reflects happy sentiment. <em>I lost my phone in subway</em> reflects sad sentiment. Usually, we use tweets data for sentiment analysis, but, of course, you can use any data.</p>
+<p>We cannot use raw words as inputs to any machine learning model because data must be numerical. To convert text data into numerical, we use <em>vocabulary</em>.</p>
+<p><strong>Vocabulary</strong>: It is a set of unique words that appear in the data. Usually, we build this vocab from training data, but we can use predefined vocabulary as well. For this tutorial, we'll make it from scratch. Vocabulary is required to create features from words and sentences to train a model. For example, <em>I lost my phone in the subway. I am stupid.</em> will build a vocabulary that contains I, lost, my, phone, in, subway, am, stupid. Now, there are several ways to create features from these words.</p>
 <p>There are several ways to convert text to numerical features. We will discuss them below.</p>
 <p>Watch <a href="https://www.coursera.org/learn/classification-vector-spaces-in-nlp/lecture/gNXI3/vocabulary-feature-extraction">this video</a> for more details on vocabulary and feature extraction.</p>
 
@@ -43,8 +44,7 @@ Download this notebook from [here](https://gist.github.com/VirkSaab/f5de2b5f83df
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">twitter_samples</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="c1"># uncomment below line to download the dataset</span>
@@ -138,7 +138,7 @@ Negative example -&gt; hopeless for tmr :(
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's create a Vocabulary by splitting the string on space to get a list of words. This process is known as <em>tokenization</em> and each word is known as <em>token</em>. Then we will take unique words from the training data to build a vocabulary. Also, lowercase the data for simplicity.</p>
+<p>Let's create a Vocabulary by splitting the string on space to get a list of words. This process is known as <em>tokenization</em>, and each word is known as <em>token</em>. Then we will take unique words from the training data to build vocabulary—also, lowercase the data for simplicity.</p>
 
 </div>
 </div>
@@ -183,7 +183,7 @@ Negative example -&gt; hopeless for tmr :(
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are total 116244 tokens.
 The vocab size is 26233.
-[&#39;&#39;, &#39;paying.&#39;, &#39;@idamelatim&#39;, &#39;z&#39;, &#39;acts&#39;, &#39;predict&#39;, &#39;cc$$,&#39;, &#39;workers&#39;, &#39;@bocagirlslayed&#39;, &#34;where&#39;s&#34;]
+[&#39;&#39;, &#39;here&#34;&#39;, &#39;#eh&#39;, &#39;shoushitsu&#39;, &#39;noon&#39;, &#39;ia&#39;, &#39;http://t.co/4uss5hboqn&#39;, &#39;#lelomustfall,&#39;, &#39;@sugarstein_19&#39;, &#39;@louiser97054900&#39;]
 </pre>
 </div>
 </div>
@@ -195,8 +195,8 @@ The vocab size is 26233.
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, we have a vocab and we have to figure out how to create features from these words. One way is one-hot vector using word's index from vocab. Vector in python is simply a list of words of a particular sentence.</p>
-<p>Let's see an example</p>
+<p>Now, we have a vocab, and we have to figure out how to create features from these words. One way is one-hot vector using word's index from vocab. A vector in python is simply a list of words of a particular sentence.</p>
+<p>Let's see an example.</p>
 
 </div>
 </div>
@@ -229,7 +229,7 @@ The vocab size is 26233.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Original Sample: Stats for the day have arrived. 2 new followers and NO unfollowers :) via http://t.co/xxlXs6xYwe.
 number of words/tokens in this example: 15
-[12701, 16763, 21437, 11156, 19218, 20692, 5245, 6068, 13412, 16108, 9842, 18451, 21329, 12676, 12118]
+[8576, 14512, 5498, 18940, 14514, 21563, 889, 21203, 24494, 9406, 21529, 19354, 9858, 4759, 20196]
 </pre>
 </div>
 </div>
@@ -241,7 +241,7 @@ number of words/tokens in this example: 15
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here, our one-hot vector will be of size equal to size of vocab, i.e. 26233 in this case and we will one-hot 15 words at given indicies in the example above.</p>
+<p>Here, our one-hot vector will be of a size equal to the size of vocab, i.e. 26233 in this case, and we will one-hot 15 words at given indices in the example above.</p>
 
 </div>
 </div>
@@ -360,7 +360,7 @@ Counter({0: 26218, 1: 15})
             }
         </style>
       <progress value='5000' class='' max='5000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-      100.00% [5000/5000 00:15<00:00]
+      100.00% [5000/5000 00:16<00:00]
     </div>
 
 </div>
@@ -389,7 +389,7 @@ Counter({0: 26218, 1: 15})
             }
         </style>
       <progress value='5000' class='' max='5000' style='width:300px; height:20px; vertical-align: middle;'></progress>
-      100.00% [5000/5000 00:13<00:00]
+      100.00% [5000/5000 00:15<00:00]
     </div>
 
 </div>
@@ -439,7 +439,7 @@ Counter({0: 26218, 1: 15})
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you familier with machine learning algorithms then you already know that this is a huge number of features and it will be computationally more expensive for bigger datasets. Anyway, we will try a logistic regression model just to see how it performs.</p>
+<p>If you are familiar with machine learning algorithms, then you already know that this is a massive number of features and it will be computationally more expensive for bigger datasets. Anyway, we will try a logistic regression model to see how it performs.</p>
 
 </div>
 </div>
@@ -549,8 +549,8 @@ Counter({0: 26218, 1: 15})
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(7500, 26233) (7500,) (2500, 26233) (2500,)
 training accuracy: 0.9998666666666667
-CPU times: user 19.4 s, sys: 438 ms, total: 19.8 s
-Wall time: 6.27 s
+CPU times: user 22.5 s, sys: 2 s, total: 24.5 s
+Wall time: 9.46 s
 </pre>
 </div>
 </div>
@@ -581,7 +581,7 @@ Wall time: 6.27 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Validation accuracy: 0.9748
+<pre>Validation accuracy: 0.982
 </pre>
 </div>
 </div>
@@ -593,7 +593,7 @@ Wall time: 6.27 s
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>WOW!! That's really impressive results with a simple logistic regression. Let's test it with our made up sentence</p>
+<p>WOW!! That's really impressive results with a simple logistic regression. Let's test it with our made-up sentence</p>
 
 </div>
 </div>
@@ -891,7 +891,7 @@ Wall time: 6.27 s
 <p>So, this worked out well. However, there are some issues:</p>
 <ul>
 <li>The model took ~12GB RAM while training.</li>
-<li>We need other method to create features because one-hot will get expensive with large datasets.</li>
+<li>We need another method to create features because one-hot will get expensive with large datasets.</li>
 <li>We still need to handle words that are not in the vocab which will raise the below error.</li>
 </ul>
 
@@ -948,16 +948,13 @@ Wall time: 6.27 s
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span>
-</pre></div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="References">References<a class="anchor-link" href="#References">&#182;</a></h4><ul>
+<li>Natual Language Processing Specialization - Course 1 - Week 1 - Coursera</li>
+</ul>
 
-    </div>
 </div>
 </div>
-
 </div>
