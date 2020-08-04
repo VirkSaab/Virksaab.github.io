@@ -12,11 +12,13 @@ author: Jitender Singh Virk
 
 ---
 
-[Click here](https://nbviewer.jupyter.org/gist/VirkSaab/cac9a94c8bbfff6c5241849c49385fd0) to view in nbviewer.
-
-Download this notebook from [here](https://gist.github.com/VirkSaab/cac9a94c8bbfff6c5241849c49385fd0)
+You can also:
+[![Github Gist](https://img.shields.io/badge/View-Github_Gist-lightgrey.svg)](https://gist.github.com/VirkSaab/cac9a94c8bbfff6c5241849c49385fd0)
+\| [![nbviewer](https://img.shields.io/badge/Render-nbviewer-orange.svg)](https://nbviewer.jupyter.org/gist/VirkSaab/cac9a94c8bbfff6c5241849c49385fd0)
+\| [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gist/VirkSaab/cac9a94c8bbfff6c5241849c49385fd0/master)
 
 ---
+
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
@@ -34,13 +36,8 @@ In this tutorial, we will use another method to create features from sentences. 
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">twitter_samples</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="c1"># uncomment below line to download the dataset</span>
-<span class="c1"># nltk.download(&#39;twitter_samples&#39;) </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># uncomment below line to install dependencies</span>
+<span class="c1"># !pip install numpy pandas scikit-learn nltk</span>
 </pre></div>
 
     </div>
@@ -51,6 +48,58 @@ In this tutorial, we will use another method to create features from sentences. 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span> <span class="nn">nltk</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">twitter_samples</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="c1"># uncomment below line to download the dataset</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;twitter_samples&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package twitter_samples to
+[nltk_data]     /home/virk/nltk_data...
+[nltk_data]   Package twitter_samples is already up-to-date!
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select the set of positive and negative tweets</span>
@@ -93,7 +142,7 @@ The type of a tweet entry is:  &lt;class &#39;str&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s look at an example tweet</span>
@@ -137,7 +186,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">posdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">positive_tweets</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tweet&quot;</span><span class="p">])</span>
@@ -159,7 +208,7 @@ Negative example -&gt; hopeless for tmr :(
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -176,7 +225,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
@@ -192,7 +241,7 @@ Negative example -&gt; hopeless for tmr :(
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[5]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -221,33 +270,33 @@ Negative example -&gt; hopeless for tmr :(
   </thead>
   <tbody>
     <tr>
-      <th>1687</th>
-      <td>I miss him :(</td>
+      <th>2455</th>
+      <td>@bmthofficial They are all sold out :((((</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>3990</th>
-      <td>@GODDAMMlT SRSLY FUCK U UNFOLLOWER HOPE UR FUT...</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4082</th>
-      <td>Never seeing your dad until midnight bc he wor...</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>4150</th>
-      <td>Every year in August I get fever :p dunno why 😷</td>
+      <th>1916</th>
+      <td>@meliefluous pamer? :)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>899</th>
-      <td>Wat a small session tat was :(..but still im l...</td>
+      <th>4255</th>
+      <td>@DEPORSEMPRE1 hello, any info about possible i...</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>588</th>
-      <td>my ankle :(</td>
+      <th>3071</th>
+      <td>@milay_44 yeah :)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>@LoLEsportspedia thanks :D</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2430</th>
+      <td>I wanna buy the #calibraskaEP :(</td>
       <td>0</td>
     </tr>
   </tbody>
@@ -271,7 +320,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">preprocessing</span><span class="p">(</span><span class="n">tweet</span><span class="p">):</span>
@@ -289,7 +338,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;tweet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">tweet</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">preprocessing</span><span class="p">)</span>
@@ -306,7 +355,7 @@ Negative example -&gt; hopeless for tmr :(
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[7]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -335,34 +384,34 @@ Negative example -&gt; hopeless for tmr :(
   </thead>
   <tbody>
     <tr>
-      <th>4834</th>
-      <td>gotdamn  :-( http://t.co/kkpdlqz2f4</td>
+      <th>3347</th>
+      <td>miss u :-( @deepikapadukone</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>1899</th>
-      <td>@youmeatyours yeah its horrible isn't it :( bi...</td>
+      <th>4461</th>
+      <td>@gufuus i saw one doujin i think of killua get...</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>4400</th>
-      <td>omg when ally hugs mani she wraps her arms aro...</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>1054</th>
-      <td>cause u know ur wrong :) fucking idiot https:/...</td>
+      <th>3825</th>
+      <td>@silv3r i can also provide this, just pop over...</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>1705</th>
-      <td>not an apology me encanta vale osea bea :-(</td>
+      <th>0</th>
+      <td>hopeless for tmr :(</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>882</th>
-      <td>@belinda_factor stressful :( you not even my d...</td>
+      <th>1181</th>
+      <td>final ep of got, here we go. :(</td>
       <td>0</td>
+    </tr>
+    <tr>
+      <th>4752</th>
+      <td>your happiness is your responsibilty. so, don'...</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -385,7 +434,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -398,7 +447,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">traindf</span><span class="p">,</span> <span class="n">valdf</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -423,8 +472,8 @@ Negative example -&gt; hopeless for tmr :(
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Shape of train and val set: (7500, 2) (2500, 2)
-Samples distribution in train set: {1: 3769, 0: 3731}
-Samples distribution in val set: {0: 1269, 1: 1231}
+Samples distribution in train set: {0: 3777, 1: 3723}
+Samples distribution in val set: {1: 1277, 0: 1223}
 </pre>
 </div>
 </div>
@@ -443,7 +492,7 @@ Samples distribution in val set: {0: 1269, 1: 1231}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">build_freqs_dict</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
@@ -468,7 +517,7 @@ Samples distribution in val set: {0: 1269, 1: 1231}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -490,8 +539,8 @@ Samples distribution in val set: {0: 1269, 1: 1231}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 996 ms, sys: 3.57 ms, total: 999 ms
-Wall time: 999 ms
+<pre>CPU times: user 1.16 s, sys: 6.94 ms, total: 1.17 s
+Wall time: 1.17 s
 </pre>
 </div>
 </div>
@@ -516,7 +565,7 @@ There will be three features for every tweet:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">make_features</span><span class="p">(</span><span class="n">tweet</span><span class="p">,</span> <span class="n">freqs</span><span class="p">):</span>
@@ -542,7 +591,7 @@ There will be three features for every tweet:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test make_features function</span>
@@ -566,8 +615,8 @@ There will be three features for every tweet:</p>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Sample tweet: @kewlaf i feel u :(
-Sample features: [   1  981 4541]
+<pre>Sample tweet: there&#39;s nothing as cool as being totally over someone, no bitterness, anger or hatred towards them. just pure indifference :)
+Sample features: [   1 2945  622]
 </pre>
 </div>
 </div>
@@ -586,7 +635,7 @@ Sample features: [   1  981 4541]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
@@ -600,7 +649,7 @@ Sample features: [   1  981 4541]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">traindf</span><span class="o">.</span><span class="n">tweet</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">partial</span><span class="p">(</span><span class="n">make_features</span><span class="p">,</span> <span class="n">freqs</span><span class="o">=</span><span class="n">freqs</span><span class="p">))</span>
@@ -639,7 +688,7 @@ Sample features: [   1  981 4541]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -663,9 +712,9 @@ Sample features: [   1  981 4541]
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Train accuracy: 0.9349333333333333
-CPU times: user 174 ms, sys: 2.36 ms, total: 177 ms
-Wall time: 66.9 ms
+<pre>Train accuracy: 0.9328
+CPU times: user 91.2 ms, sys: 7.88 ms, total: 99.1 ms
+Wall time: 44.3 ms
 </pre>
 </div>
 </div>
@@ -676,7 +725,7 @@ Wall time: 66.9 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation accuracy:&quot;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">))</span>
@@ -696,7 +745,7 @@ Wall time: 66.9 ms
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Validation accuracy: 0.9372
+<pre>Validation accuracy: 0.928
 </pre>
 </div>
 </div>
@@ -722,7 +771,7 @@ Wall time: 66.9 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>          <span class="c1"># module for stop words that come with NLTK</span>
@@ -730,21 +779,40 @@ Wall time: 66.9 ms
 <span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">TweetTokenizer</span>   <span class="c1"># module for tokenizing strings</span>
 <span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">punctuation</span>             <span class="c1"># common punctuations</span>
 
+<span class="c1"># uncomment below 2 lines to download stopwords</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
+
 
 <span class="n">stopwords_english</span> <span class="o">=</span> <span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">)</span>
-<span class="c1"># uncomment below 2 lines to download stopwords</span>
-<span class="c1"># import nltk</span>
-<span class="c1"># nltk.download(&#39;stopwords&#39;)</span>
 </pre></div>
 
     </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package stopwords to /home/virk/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">preprocessing2</span><span class="p">(</span><span class="n">tweet</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">):</span>
@@ -771,7 +839,7 @@ Wall time: 66.9 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># instantiate tokenizer class</span>
@@ -785,7 +853,7 @@ Wall time: 66.9 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -808,15 +876,15 @@ Wall time: 66.9 ms
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 1.52 s, sys: 83.3 ms, total: 1.6 s
-Wall time: 1.07 s
+<pre>CPU times: user 1.66 s, sys: 79.8 ms, total: 1.74 s
+Wall time: 1.22 s
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[22]:</div>
 
 
 
@@ -845,34 +913,34 @@ Wall time: 1.07 s
   </thead>
   <tbody>
     <tr>
-      <th>4349</th>
-      <td>none hiding behind shower curtain :(</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>3977</th>
-      <td>like u :)</td>
+      <th>352</th>
+      <td>happy friday checking see enjoyed super-blend :)</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>3642</th>
-      <td>hi bam follow bestfriend loves lot :) see wars...</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>431</th>
-      <td>oh apparently i'm already member lol hopefully...</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>3220</th>
-      <td>funny thing someone said telling life story :(</td>
+      <th>732</th>
+      <td>kik thenting 423 kik kiksex omegle skype amate...</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>3877</th>
-      <td>want myungsoo gyu hoya yeol :(</td>
+      <th>2121</th>
+      <td>burned pizza rolls :-(</td>
       <td>0</td>
+    </tr>
+    <tr>
+      <th>3562</th>
+      <td>dear last night waited 2hrs 13m pizza time arr...</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2799</th>
+      <td>omg can't believe vampire diaries followed tha...</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1248</th>
+      <td>absolutely waiting day :)</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
@@ -895,7 +963,7 @@ Wall time: 1.07 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Split data</span>
@@ -921,8 +989,8 @@ Wall time: 1.07 s
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Shape of train and val set: (8000, 2) (2000, 2)
-Samples distribution in train set: {1: 4014, 0: 3986}
-Samples distribution in val set: {0: 1014, 1: 986}
+Samples distribution in train set: {0: 4005, 1: 3995}
+Samples distribution in val set: {1: 1005, 0: 995}
 </pre>
 </div>
 </div>
@@ -933,7 +1001,7 @@ Samples distribution in val set: {0: 1014, 1: 986}
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -956,8 +1024,8 @@ Samples distribution in val set: {0: 1014, 1: 986}
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 1.07 s, sys: 0 ns, total: 1.07 s
-Wall time: 1.07 s
+<pre>CPU times: user 1.11 s, sys: 0 ns, total: 1.11 s
+Wall time: 1.11 s
 </pre>
 </div>
 </div>
@@ -968,7 +1036,7 @@ Wall time: 1.07 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -1000,8 +1068,8 @@ Wall time: 1.07 s
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(8000, 3) (8000,) (2000, 3) (2000,)
-CPU times: user 156 ms, sys: 0 ns, total: 156 ms
-Wall time: 154 ms
+CPU times: user 207 ms, sys: 3.15 ms, total: 210 ms
+Wall time: 208 ms
 </pre>
 </div>
 </div>
@@ -1012,7 +1080,7 @@ Wall time: 154 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -1036,15 +1104,15 @@ Wall time: 154 ms
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CPU times: user 155 ms, sys: 0 ns, total: 155 ms
-Wall time: 39.8 ms
+<pre>CPU times: user 160 ms, sys: 3.99 ms, total: 164 ms
+Wall time: 42.5 ms
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[25]:</div>
+    <div class="prompt output_prompt">Out[26]:</div>
 
 
 
@@ -1061,7 +1129,7 @@ Wall time: 39.8 ms
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Train accuracy:&quot;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">))</span>
@@ -1082,8 +1150,8 @@ Wall time: 39.8 ms
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Train accuracy: 0.990375
-Validation accuracy: 0.993
+<pre>Train accuracy: 0.990625
+Validation accuracy: 0.99
 </pre>
 </div>
 </div>
@@ -1103,7 +1171,7 @@ Validation accuracy: 0.993
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">sent</span><span class="p">):</span>
@@ -1122,43 +1190,10 @@ Validation accuracy: 0.993
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I am happy about the results&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;positive&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;This worked out fine.&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I am happy about the results&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1189,6 +1224,39 @@ Validation accuracy: 0.993
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;This worked out fine.&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;positive&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I lost my phone.&quot;</span><span class="p">))</span> <span class="c1"># This should be negative</span>
@@ -1224,43 +1292,10 @@ positive
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Julia broke up with John&quot;</span><span class="p">)</span> <span class="c1"># What? that&#39;s not good</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;positive&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I forgot my lunch at home&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Julia broke up with John&quot;</span><span class="p">)</span> <span class="c1"># What? that&#39;s not good</span>
 </pre></div>
 
     </div>
@@ -1293,7 +1328,7 @@ positive
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I&#39;m sick&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I forgot my lunch at home&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1312,7 +1347,7 @@ positive
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;negative&#39;</pre>
+<pre>&#39;positive&#39;</pre>
 </div>
 
 </div>
@@ -1326,7 +1361,7 @@ positive
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;this is a sick beat&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I&#39;m sick&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1345,7 +1380,7 @@ positive
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;positive&#39;</pre>
+<pre>&#39;negative&#39;</pre>
 </div>
 
 </div>
@@ -1357,6 +1392,39 @@ positive
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;this is a sick beat&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;positive&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Get away from me&quot;</span><span class="p">)</span>
@@ -1372,7 +1440,7 @@ positive
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[35]:</div>
+    <div class="prompt output_prompt">Out[36]:</div>
 
 
 

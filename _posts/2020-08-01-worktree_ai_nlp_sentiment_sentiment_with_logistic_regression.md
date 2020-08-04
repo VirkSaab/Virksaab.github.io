@@ -12,9 +12,10 @@ author: Jitender Singh Virk
 
 ---
 
-[Click here](https://nbviewer.jupyter.org/gist/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e) to view in nbviewer.
-
-Download this notebook from [here](https://gist.github.com/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e)
+You can also:
+[![Github Gist](https://img.shields.io/badge/View-Github_Gist-lightgrey.svg)](https://gist.github.com/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e)
+\| [![nbviewer](https://img.shields.io/badge/Render-nbviewer-orange.svg)](https://nbviewer.jupyter.org/gist/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e)
+\| [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gist/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e/master)
 
 ---
 
@@ -44,11 +45,8 @@ Download this notebook from [here](https://gist.github.com/VirkSaab/f5de2b5f83df
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">twitter_samples</span>
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="c1"># uncomment below line to download the dataset</span>
-<span class="c1"># nltk.download(&#39;twitter_samples&#39;) </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># uncomment below line to install dependencies</span>
+<span class="c1"># !pip install numpy pandas scikit-learn nltk</span>
 </pre></div>
 
     </div>
@@ -59,6 +57,57 @@ Download this notebook from [here](https://gist.github.com/VirkSaab/f5de2b5f83df
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">twitter_samples</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<span class="c1"># uncomment below line to download the dataset</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;twitter_samples&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>[nltk_data] Downloading package twitter_samples to
+[nltk_data]     /home/virk/nltk_data...
+[nltk_data]   Package twitter_samples is already up-to-date!
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># select the set of positive and negative tweets</span>
@@ -101,7 +150,7 @@ The type of a tweet entry is:  &lt;class &#39;str&#39;&gt;
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Let&#39;s look at an example tweet</span>
@@ -145,7 +194,7 @@ Negative example -&gt; hopeless for tmr :(
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Tokenize</span>
@@ -183,7 +232,7 @@ Negative example -&gt; hopeless for tmr :(
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>There are total 116244 tokens.
 The vocab size is 26233.
-[&#39;&#39;, &#39;here&#34;&#39;, &#39;#eh&#39;, &#39;shoushitsu&#39;, &#39;noon&#39;, &#39;ia&#39;, &#39;http://t.co/4uss5hboqn&#39;, &#39;#lelomustfall,&#39;, &#39;@sugarstein_19&#39;, &#39;@louiser97054900&#39;]
+[&#39;&#39;, &#39;@ark_yujin96&#39;, &#39;@derekklahn&#39;, &#39;cases&#39;, &#39;experiencing&#39;, &#39;video&#39;, &#39;nae&#39;, &#39;#decorating&#39;, &#39;@thedemocrats&#39;, &#39;@hackadayio&#39;]
 </pre>
 </div>
 </div>
@@ -203,7 +252,7 @@ The vocab size is 26233.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample</span> <span class="o">=</span> <span class="n">positive_tweets</span><span class="p">[</span><span class="mi">300</span><span class="p">]</span>
@@ -229,7 +278,7 @@ The vocab size is 26233.
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Original Sample: Stats for the day have arrived. 2 new followers and NO unfollowers :) via http://t.co/xxlXs6xYwe.
 number of words/tokens in this example: 15
-[8576, 14512, 5498, 18940, 14514, 21563, 889, 21203, 24494, 9406, 21529, 19354, 9858, 4759, 20196]
+[6820, 23233, 22609, 12793, 14574, 23682, 10528, 8235, 12313, 2170, 17006, 888, 14918, 9005, 15061]
 </pre>
 </div>
 </div>
@@ -248,7 +297,7 @@ number of words/tokens in this example: 15
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sample_vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
@@ -293,7 +342,7 @@ Counter({0: 26218, 1: 15})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -309,7 +358,7 @@ Counter({0: 26218, 1: 15})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use vocab to convert sentences to one-hot vectors</span>
@@ -402,7 +451,7 @@ Counter({0: 26218, 1: 15})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">posdf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">positive_tweets_vectors</span><span class="p">)</span>
@@ -446,7 +495,7 @@ Counter({0: 26218, 1: 15})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Split dataset into training and validation</span>
@@ -479,7 +528,7 @@ Counter({0: 26218, 1: 15})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Verify the classes split</span>
@@ -496,7 +545,7 @@ Counter({0: 26218, 1: 15})
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[12]:</div>
 
 
 
@@ -518,7 +567,7 @@ Counter({0: 26218, 1: 15})
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%time</span>
@@ -548,9 +597,9 @@ Counter({0: 26218, 1: 15})
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>(7500, 26233) (7500,) (2500, 26233) (2500,)
-training accuracy: 0.9998666666666667
-CPU times: user 22.5 s, sys: 2 s, total: 24.5 s
-Wall time: 9.46 s
+training accuracy: 1.0
+CPU times: user 21.6 s, sys: 2.57 s, total: 24.2 s
+Wall time: 10.2 s
 </pre>
 </div>
 </div>
@@ -561,7 +610,7 @@ Wall time: 9.46 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Validation accuracy:&quot;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span><span class="p">))</span>
@@ -581,7 +630,7 @@ Wall time: 9.46 s
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Validation accuracy: 0.982
+<pre>Validation accuracy: 0.9816
 </pre>
 </div>
 </div>
@@ -600,7 +649,7 @@ Wall time: 9.46 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">sent</span><span class="p">):</span>
@@ -623,43 +672,10 @@ Wall time: 9.46 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I am happy about the results&quot;</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;positive&#39;</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;This worked out fine.&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I am happy about the results&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -692,7 +708,7 @@ Wall time: 9.46 s
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I lost my phone&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;This worked out fine.&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -725,7 +741,7 @@ Wall time: 9.46 s
 <div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Julia broke up with John&quot;</span><span class="p">)</span> <span class="c1"># What? that&#39;s not good</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I lost my phone&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -744,7 +760,7 @@ Wall time: 9.46 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;positive&#39;</pre>
+<pre>&#39;negative&#39;</pre>
 </div>
 
 </div>
@@ -758,7 +774,7 @@ Wall time: 9.46 s
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I forgot my lunch at home&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Julia broke up with John&quot;</span><span class="p">)</span> <span class="c1"># What? that&#39;s not good</span>
 </pre></div>
 
     </div>
@@ -777,7 +793,7 @@ Wall time: 9.46 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;negative&#39;</pre>
+<pre>&#39;positive&#39;</pre>
 </div>
 
 </div>
@@ -791,7 +807,7 @@ Wall time: 9.46 s
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I&#39;m sick&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I forgot my lunch at home&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -824,7 +840,7 @@ Wall time: 9.46 s
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;this is a sick beat&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;I&#39;m sick&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -843,7 +859,7 @@ Wall time: 9.46 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;positive&#39;</pre>
+<pre>&#39;negative&#39;</pre>
 </div>
 
 </div>
@@ -857,7 +873,7 @@ Wall time: 9.46 s
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Get away from me&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;this is a sick beat&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -876,7 +892,40 @@ Wall time: 9.46 s
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;negative&#39;</pre>
+<pre>&#39;positive&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;Get away from me&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[23]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;positive&#39;</pre>
 </div>
 
 </div>
@@ -900,7 +949,7 @@ Wall time: 9.46 s
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test</span><span class="p">(</span><span class="s2">&quot;This tutorial worked out well :)&quot;</span><span class="p">)</span> <span class="c1"># Damn it :(</span>
@@ -923,17 +972,17 @@ Wall time: 9.46 s
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-23-4607a7e11912&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">&lt;ipython-input-24-4607a7e11912&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>test<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;This tutorial worked out well :)&#34;</span><span class="ansi-blue-fg">)</span> <span class="ansi-red-fg"># Damn it :(</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-14-87f8bb73d130&gt;</span> in <span class="ansi-cyan-fg">test</span><span class="ansi-blue-fg">(sent)</span>
+<span class="ansi-green-fg">&lt;ipython-input-15-87f8bb73d130&gt;</span> in <span class="ansi-cyan-fg">test</span><span class="ansi-blue-fg">(sent)</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> test<span class="ansi-blue-fg">(</span>sent<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-red-fg"># Convert to one-hot vector</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span>words <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>vocab<span class="ansi-blue-fg">.</span>index<span class="ansi-blue-fg">(</span>word<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> word <span class="ansi-green-fg">in</span> sent<span class="ansi-blue-fg">.</span>lower<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>strip<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34; &#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
 <span class="ansi-green-intense-fg ansi-bold">      4</span>     sent_vec <span class="ansi-blue-fg">=</span> np<span class="ansi-blue-fg">.</span>zeros<span class="ansi-blue-fg">(</span>len<span class="ansi-blue-fg">(</span>vocab<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">,</span> dtype<span class="ansi-blue-fg">=</span>int<span class="ansi-blue-fg">)</span>
 <span class="ansi-green-intense-fg ansi-bold">      5</span>     sent_vec<span class="ansi-blue-fg">[</span>words<span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">1.</span>
 
-<span class="ansi-green-fg">&lt;ipython-input-14-87f8bb73d130&gt;</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
+<span class="ansi-green-fg">&lt;ipython-input-15-87f8bb73d130&gt;</span> in <span class="ansi-cyan-fg">&lt;listcomp&gt;</span><span class="ansi-blue-fg">(.0)</span>
 <span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-green-fg">def</span> test<span class="ansi-blue-fg">(</span>sent<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
 <span class="ansi-green-intense-fg ansi-bold">      2</span>     <span class="ansi-red-fg"># Convert to one-hot vector</span>
 <span class="ansi-green-fg">----&gt; 3</span><span class="ansi-red-fg">     </span>words <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">[</span>vocab<span class="ansi-blue-fg">.</span>index<span class="ansi-blue-fg">(</span>word<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> word <span class="ansi-green-fg">in</span> sent<span class="ansi-blue-fg">.</span>lower<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>strip<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>split<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34; &#34;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">]</span>
