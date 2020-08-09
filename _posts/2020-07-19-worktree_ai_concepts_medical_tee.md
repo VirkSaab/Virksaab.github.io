@@ -8,11 +8,6 @@ title:  "Treatment Effect Estimation (TEE)"
 author: Jitender Singh Virk
 ---
 
-<sup>last updated: {{ page.date | date: "%d %b, %Y" }} || Author: {{ page.author }}</sup>
-
----
-
-
 <p style="background: #eeeeee;">
 Note: The paragraph in little dark color background represents small terms or concepts used in the main concepts.</p>
 

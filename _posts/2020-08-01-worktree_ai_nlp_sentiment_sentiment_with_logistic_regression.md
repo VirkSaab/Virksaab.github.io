@@ -8,10 +8,6 @@ title:  "Tweet Sentiment Analysis with Logistic Regression - 1"
 author: Jitender Singh Virk
 ---
 
-<sup>last updated: {{ page.date | date: "%d %b, %Y" }} || Author: {{ page.author }}</sup>
-
----
-
 You can also:
 [![Github Gist](https://img.shields.io/badge/View-Github_Gist-lightgrey.svg)](https://gist.github.com/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e)
 \| [![nbviewer](https://img.shields.io/badge/Render-nbviewer-orange.svg)](https://nbviewer.jupyter.org/gist/VirkSaab/f5de2b5f83df4b7a82d7bc2a81f3874e)

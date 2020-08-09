@@ -34,6 +34,15 @@ collections:
   subjects:
     output: true
 
+# For last modified date
+plugins:
+  - jekyll-last-modified-at
+# Optional. The default date format, used if none is specified in the tag.
+last-modified-at:
+    date-format: '%d-%b-%y'
+
+
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
