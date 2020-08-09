@@ -13,7 +13,7 @@
       <div class="container-fluid">
         <h1 class="mt-4">{{page.title}}</h1>
         <div class="text-right">
-          <b>Updated on:</b> {{ page.last_modified_at | date: "%d %b, %Y" }} ||
+          <b>Updated on:</b> {{ page.date | date: "%d %b, %Y" }} ||
           <b>Domain:</b> {{ page.section}}
         </div> <hr class="mb-0 mt-1">
           <div class="container-fluid pt-3 pl-3 pr-3 pb-3 text-justify" style="font-size: larger;">
