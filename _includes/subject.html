@@ -1,7 +1,7 @@
 <div id="accordion">
   {% assign items_grouped = site.posts | group_by:"section" %}
   {% for group in items_grouped %}
-    {% if page.name == group.items[0].subject %}
+    {% if page.alias == group.items[0].subject %}
       <div class="card bg-dark border-secondary">
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">

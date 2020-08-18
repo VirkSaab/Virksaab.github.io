@@ -14,7 +14,7 @@
         <h1 class="mt-4">{{page.title}}</h1>
         <div class="text-right">
           <b>Updated on:</b> {{ page.date | date: "%d %b, %Y" }} ||
-          <b>Domain:</b> {{ page.section}}
+          <b>Topic:</b> {{ page.subject}} - {{ page.section}}
         </div> <hr class="mb-0 mt-1">
           <div class="container-fluid pt-3 pl-3 pr-3 pb-3 text-justify" style="font-size: larger;">
             {{ content }}
@@ -43,6 +43,19 @@
       $("#wrapper").toggleClass("toggled");
     });
   </script>
+
+  <!-- Go to top button -->
+  <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+  <script>addBackToTop({
+    diameter: 40,
+    backgroundColor: '#ddd',
+    innerHTML: '<svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>',
+    textColor: 'black',
+    showWhenScrollTopIs: 1000
+  })</script>
+
+  <!-- Render math in markdown -->
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 
 </body>
 
