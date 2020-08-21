@@ -13,7 +13,7 @@ Inner join means joining two tables on specified columns from both tables and ta
 
 For example:
 
-<img src="/assets/imgs/sql_innerjoin.png" class="rounded mx-auto d-block" alt="inner join example image" style="max-height:23rem">
+<img src="/assets/imgs/sql/innerjoin.png" class="rounded mx-auto d-block" alt="inner join example image" style="max-height:23rem">
 
 
 The code example given below shows the syntax of INNER JOIN of three example tables named `countries`, `populations`, and `economies`:
@@ -110,12 +110,12 @@ FROM countries;
 <br>
 ## OUTER JOINS AND CROSS JOINS
 Outer join integrates the content of both table either they are matched or not. There are three fundamental outer joins: left, right, and full join. The main idea is shown in the figure below:
-<img src="/assets/imgs/sql_inner_and_outer_joins.jpg" class="rounded mx-auto d-block" alt="Inner and Outer join overview" style="max-width:90%;  max-height: 25rem;">
+<img src="/assets/imgs/sql/inner_and_outer_joins.jpg" class="rounded mx-auto d-block" alt="Inner and Outer join overview" style="max-width:90%;  max-height: 25rem;">
 <br>
 ### LEFT and RIGHT JOIN
 Left join means the main table is on left and we reach out to right table to join. While left joining, we keep all the records of left table whether it matches with right table or not and merges the right tables values. If some rows from the key column (the column we use to join) are missing in right table, null will be assigned there. The resulting table will have same number of rows/samples as left table. Also, the values in left key column can match multiple values in the right key column. The example is shown in the image below.
 
-<img src="/assets/imgs/sql_leftjoin.png" class="rounded mx-auto d-block" alt="Inner and Outer join overview" style="max-height:25rem">
+<img src="/assets/imgs/sql/leftjoin.png" class="rounded mx-auto d-block" alt="Inner and Outer join overview" style="max-height:25rem">
 
 The syntax is similar to inner join. Just replace the INNER with LEFT. For example:
 
@@ -137,7 +137,7 @@ ORDER BY avg_gdp DESC;
 ```
 
 Right joins aren't as common as left joins. One reason why is that you can always write a right join as a left join. The example and syntax of right join is shown in the image below.
-<img src="/assets/imgs/sql_rightjoin.png" class="rounded mx-auto d-block" alt="Inner and Outer join overview" style="max-height:25rem">
+<img src="/assets/imgs/sql/rightjoin.png" class="rounded mx-auto d-block" alt="Inner and Outer join overview" style="max-height:25rem">
 The syntax of right join is as follows:
 ```sql
 SELECT right_table.id AS R_id,
@@ -175,10 +175,40 @@ ORDER BY city, language;
 
 <br>
 ### FULL JOIN
+Full join is like union of two tables. We keep data from both tables. Order of the tables still matters. If you switch the tables you will get slightly different results.
+<img src="/assets/imgs/sql/fulljoin.png" class="rounded mx-auto d-block" alt="full join image" style="max-height:25rem">
+
+The syntax is similar to INNER join except FULL instead of INNER.
+
+```sql
+SELECT left_table.id AS L_id,
+       right_table.id AS R_id,
+       left_table.val AS L_val,
+       right_table.val AS R_val
+FROM left_table
+FULL JOIN right_table
+USING (id);
+```
+
+<br>
+### CROSS JOIN
+In cross join, all rows in left table interacts with all rows in the right table. Cross join creates all possible combinations of two tables. See the example in the image below. Note that cross joins do not use ON or USING.
+
+<img src="/assets/imgs/sql/crossjoin.png" class="rounded mx-auto d-block" alt="cross join image" style="max-height:30rem">
+The syntax is similar to full join except CROSS instead of FULL.
+```sql
+SELECT left_table.id AS L_id,
+       right_table.id AS R_id,
+       left_table.val AS L_val,
+       right_table.val AS R_val
+FROM left_table
+CROSS JOIN right_table
+```
+
 
 
 ---
 ##### References:
 
 * [Joining Data in SQL Course - DataCamp](https://learn.datacamp.com/courses/joining-data-in-postgresql)
-* [Inner and outer joins overview image](https://www.ionos.com/digitalguide/hosting/technical-matters/sql-outer-join/)
+* [Inner and outer joins overview image](https://www.ionos.com/digitalguide/fileadmin/DigitalGuide/Screenshots_2018/Outer-Join.jpg)
