@@ -47,7 +47,8 @@ Let us see how a linked list is maintained in the memory. In order to form a lin
 
 ## Singly Linked Lists
 A singly linked list is the simplest type of linked list in which every node contains some data and a pointer to the next node of the same data type. By saying that the node contains a pointer to the next node, we mean that the node stores the address of the next node in sequence. A singly linked list allows traversal of data only in one way. Below figure shows a singly linked list.
-<img src="/assets/20MAI/ADSA/linkedlist.png" class="rounded mx-auto d-block" alt="Example of spatial resolution" style="max-width: 97%; min-width: 50%; max-height:30rem;">
+
+<img src="/assets/20MAI/ADSA/linkedlist.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 7rem;">
 
 #### Traversing a Linked List
 Traversing a linked list means accessing the nodes of the list in order to perform some processing on them. Remember a linked list always contains a pointer variable START which stores the address of the first node of the list. End of the list is marked by storing NULL or –1 in the NEXT field of the last node. For traversing the linked list, we also make use of another pointer variable PTR which points to the node that is currently being accessed. The algorithm to traverse a linked list is shown below
@@ -83,7 +84,7 @@ Step 5: EXIT
 In Step 1, we initialize the pointer variable PTR with START that contains the address of the first node. In Step 2, a while loop is executed which will compare every node’s DATA with VAL for which the search is being made. If the search is successful, that is, VAL has been found, then the address of that node is stored in POS and the control jumps to the last statement of the algorithm. However, if the search is unsuccessful, POS is set to NULL which indicates that VAL is not present in the linked list.
 
 
-# 6.2.3 Inserting a New Node in a Linked List ...
+## 6.2.3 Inserting a New Node in a Linked List ...
 
 
 
@@ -95,7 +96,7 @@ In Step 1, we initialize the pointer variable PTR with START that contains the a
 
 * In a linked list, every node contains a pointer to another node which is of the same type, it is also called a __blank__ data type. <span class="text-success" data-toggle="tooltip" data-placement="right" title="self-referential"> answer </span>
 
-* What is step 3 doing in the given algo. In what situation step 7 will be executed? mid-sem question.
+* What is step 3 doing in the given algo. In what situation step 7 will be executed? mid-sem question type.
 
 
 
