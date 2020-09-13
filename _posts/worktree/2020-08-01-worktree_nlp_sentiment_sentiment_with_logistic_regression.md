@@ -3,7 +3,7 @@ layout: post
 type: "WorkTree"
 subject: "NLP"
 section: "Sentiment Analysis"
-title:  "Tweet Sentiment Analysis with Logistic Regression - 1"
+title:  "1. Tweet Sentiment Analysis with Logistic Regression - 1"
 author: Jitender Singh Virk
 ---
 

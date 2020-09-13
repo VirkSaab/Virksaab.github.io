@@ -5,22 +5,27 @@
       {% if page.layout == "default" %}
         {{ page.title }}
       {% else %}
-        <a href="/{{page.type | downcase }}" style="color: snow;">{{ page.type }}</a>
+        {% if page.type == "MECSEAIML" %}
+          <a href="/{{page.type}}" style="color: snow;">CSE(AIML)</a>
+        {% else %}
+          <a href="/{{page.type  | downcase}}" style="color: snow;">{{ page.type }}</a>
+        {% endif %}
+
       {% endif %}
     </h1>
   </div>
 
   <div class="list-group list-group-flush">
     <span class="border-top border-light"></span>
-
-      {% for post in site.posts %}
-        {% if post.type == page.type %}
+      {% assign sorted-posts = site.posts | sort: 'title' %}
+      {% for post in sorted-posts %}
+        {% if post.subject == page.subject %}
           <span class="border-bottom border-light">
             <a href="{{ post.url }}" class="list-group-item list-group-item-action bg-dark text-light">{{ post.title }}</a>
           </span>
         {% endif %}
       {% endfor %}
-      
+
   </div>
 </div>
 <!-- /#sidebar-wrapper -->

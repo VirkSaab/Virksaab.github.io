@@ -33,6 +33,8 @@ plugins:
 collections:
   subjects:
     output: true
+  MECSEAIML:
+    output: true
 
 # For last modified date
 plugins:

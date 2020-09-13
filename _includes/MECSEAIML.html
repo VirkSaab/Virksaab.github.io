@@ -1,5 +1,7 @@
 <div id="accordion">
-  {% assign items_grouped = site.posts | group_by:"section" %}
+  {% assign MECSEAIML_posts = site.posts | where: "type", "MECSEAIML"%}
+  {% assign sorted-posts = MECSEAIML_posts | sort: 'title' %}
+  {% assign items_grouped = sorted-posts | group_by:"section" %}
   {% for group in items_grouped %}
     {% if page.alias == group.items[0].subject %}
       <div class="card bg-dark border-secondary">
@@ -13,8 +15,7 @@
         <div id="{{ group.name | slugify}}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <div class="list-group">
-              {% assign sorted-posts = group.items | sort: 'title' %}
-              {% for post in sorted-posts %}
+              {% for post in group.items %}
                   <a href="{{ post.url }}" class="list-group-item list-group-item-action bg-secondary text-white rounded mb-1">{{ post.title }}</a>
               {% endfor %}
             </div>
