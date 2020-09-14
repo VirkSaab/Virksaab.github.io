@@ -18,6 +18,14 @@ A research problem, in general, refers to some difficulty which a researcher exp
 
 viz. **A research problem** is a statement about an area of concern, a condition to be improved, a difficulty to be eliminated, or a troubling question that exists in scholarly literature, in theory, or in practice that points to the need for meaningful understanding and deliberate investigation. In some social science disciplines the research problem is typically posed in the form of a question. A research problem does not state how to do something, offer a vague or broad proposition, or present a value question. However, it is important to remember that not all questions can be transformed into research problems and some may prove to be extremely difficult to study.
 
+We can, thus, state the components of a research problem as under:
+* There must be an individual or a group which has some difficulty or the problem.
+* There must be some objective(s) to be attained at. If one wants nothing, one cannot have a problem.
+* There must be alternative means (or the courses of action) for obtaining the objective(s) one wishes to attain. This means that there must be at least two means available to a researcher for if he has no choice of means, he cannot have a problem.
+* There must remain some doubt in the mind of a researcher with regard to the selection of alternatives. This means that research must answer the question concerning the relative efficiency of the possible alternatives.
+* There must be some environment(s) to which the difficulty pertains.
+
+
 Thus, a research problem is one which requires a researcher to find out the best solution for the given problem, i.e., to find out by which course of action the objective can be attained optimally in the context of a given environment. There are several factors which may result in making the problem complicated. For instance, the environment may change affecting the efficiencies of the courses of action or the values of the outcomes; the number of alternative courses of action may be very large; persons not involved in making the decision may be affected by it and react to it favourably or unfavourably, and similar other factors. All such elements (or at least the important ones) may be thought of in context of a research problem.
 
 #### The purpose of a problem statement is to:
@@ -173,13 +181,60 @@ Any research starts with a problem that you derive from the topic that attracts 
 
 Your question should have enough bearing on a given topic and stay within the limits set by your professors in advance. Pick an interesting subject to stimulate your motivation. It shouldn’t be very vague or broad. If your research question is broad, you can make it more specific by specific aspects, time periods, or events. There shouldn’t be more than a few possible answers.
 
+## Selecting the problem
+The research problem undertaken for study must be carefully selected. The task is a difficult one, although it may not appear to be so. Help may be taken from a research guide in this connection. Nevertheless, every researcher must find out his own salvation for research problems cannot be borrowed. A problem must spring from the researcher’s mind like a plant springing from its own seed. If our eyes need glasses, it is not the optician alone who decides about the number of the lens we require. We have to see ourselves and enable him to prescribe for us the right number by cooperating with him. Thus, a research guide can at the most only help a researcher choose a subject. However, the following points may be observed by a researcher in selecting a research problem or a subject for research:
+* Subject which is overdone should not be normally chosen, for it will be a difficult task to throw any new light in such a case.
 
-# ANOVA problem https://rpubs.com/mmcbee/228015
+* Controversial subject should not become the choice of an average researcher.
+
+* Too narrow or too vague problems should be avoided.
+
+* The subject selected for research should be familiar and feasible so that the related research material or sources of research are within one’s reach. Even then it is quite difficult to supply definitive ideas concerning how a researcher should obtain ideas for his research. For this purpose, a researcher should contact an expert or a professor in the University who is already engaged in research. He may as well read articles published in current literature available on the subject and may think how the techniques and ideas discussed therein might be applied to the solution of other problems. He may discuss with others what he has in mind concerning a problem. In this way he should make all possible efforts in selecting a problem.
+
+* The importance of the subject, the qualifications and the training of a researcher, the costs involved, the time factor are few other criteria that must also be considered in selecting a problem. In other words, before the final selection of a problem is done, a researcher must ask himself the following questions:
+  1. Whether he is well equipped in terms of his background to carry out the research?
+  2. Whether the study falls within the budget he can afford?
+  3. Whether the necessary cooperation can be obtained from those who must participate in research as subjects?
+
+  If the answers to all these questions are in the affirmative, one may become sure so far as the practicability of the study is concerned.
+
+* The selection of a problem must be preceded by a preliminary study. This may not be necessary when the problem requires the conduct of a research closely similar to one that has already been done. But when the field of inquiry is relatively new and does not have available a set of well developed techniques, a brief feasibility study must always be undertaken.
+
+## Technique involved in Defining a Problem
+Defining a problem involves the task of laying down boundaries within which a researcher shall study the problem with a pre-determined objective in view. Defining a research problem properly and clearly is a crucial part of a research study and must in no case be accomplished hurriedly. The technique for the purpose involves the undertaking of the following steps generally one after the other:
+* statement of the problem in a general way;
+* understanding the nature of the problem;
+* surveying the available literature
+* developing the ideas through discussions; and
+* rephrasing the research problem into a working proposition.
+
+A brief description of all these points is as follows:
+
+1. **Statement of the problem in a general way**: First  of  all  the problem  should  be  stated  in  abroad general way, keeping in view either some practical concern or some scientific or intellectual interest. In case of social research, it is considered advisable to do some field observation and as such the researcher may undertake some sort of preliminary survey or what is often called pilot survey. The problem stated in a broad general way may contain various ambiguities which must be resolved by cool thinking and rethinking over the problem. At the same time the feasibility of a particular solution has to be considered and the same should be kept in view while stating the problem
+
+2. **Understanding the nature of the problem**: The  next  step  in  defining  the  problem  is  to understand its origin and nature clearly. The researcher should also keep in view the environment within which the problem is to be studied and understood.
+
+3. **Surveying the available literature**: All available literature concerning the problem at hand must necessarily be surveyed and examined before a definition of the research problem is given.This means that the researcher must be well-conversant with relevant theories in the field, reports and  records  as  also  all  other  relevant  literature. This would also help a researcher to know if there are certain gaps in the theories, or whether the existing theories applicable to the problem under study are inconsistent with each other, or whether the findings of the different studies do not follow a pattern consistent with the theoretical expectations and so on. Studies on related problems are useful for indicating the type  of  difficulties  that  may  be  encountered  in  the  present  study  as  also  the  possible  analytical shortcomings. At times such studies may also suggest useful and even new lines of approach to the present problem.
+
+4. **Developing the ideas through discussions**: A researcher must discuss his problem with his colleagues and others who have enough experience in the same area or in working on similar problems. This is quite often known as an experience survey.
+
+5. **Rephrasing the research problem**: Through rephrasing, the researcher puts the research problem in as specific terms as possible so that it may become operationally viable and may help in the development of working hypotheses. In addition to what has been stated above, the following points must also be observed while defining a research problem:
+  * Technical terms and words or phrases, with special meanings used in the statement of the problem, should be clearly defined.
+  * Basic assumptions or postulates (if any) relating to the research problem should be clearly stated.
+  * A  straight  forward  statement  of  the  value  of  the  investigation  (i.e.,  the  criteria  for  the selection of the problem) should be provided.
+  * The suitability of the time-period and the sources of data available must also be considered by the researcher in defining the problem.
+  * The scope of the investigation or the limits within which the problem is to be studied must be mentioned explicitly in defining a research problem.
+
+## Importance of Literature Review in Defining a Problem
+
+
 
 
 
 ---
 ## FAQs <small>(hover on green text for answer)<small>
+* ***ANOVA problem https://rpubs.com/mmcbee/228015***
+
 * A <span class="text-success" data-toggle="tooltip" data-placement="right" title="theory"> _________ </span> is an idea about how things relate to each other.
 * A conceptual framework shows how questions and themes are related. <span class="text-success" data-toggle="tooltip" data-placement="right" title="True"> True or False? </span>
 * Brainstorming is a process of focusing down on the questions that interest you most. <span class="text-success" data-toggle="tooltip" data-placement="right" title="False"> True or False? </span>
