@@ -181,6 +181,8 @@ and are denoted $$N_D(p)$$. These neighbors, together with the 4-neighbors, are 
 
 ---
 ## FAQs <small><small>(hover on green text for answer)</small></small>
+
+* [IA Questions/Answers](http://www.philadelphia.edu.jo/academics/qhamarsheh/uploads/MS_second_DIP_2011_2.pdf)
 * the higher-frequency (shorter wavelength) electromagnetic phenomena carry __blank__ (more/less) energy per photon. <span class="text-success" data-toggle="tooltip" data-placement="right" title="more"> answer </span>
 * In the continuous to digital image conversion, the process of digitizing the amplitude values is called __blank__. <span class="text-success" data-toggle="tooltip" data-placement="right" title="Quantization"> answer </span>
 * The process used for digitizing the coordinate values in the conversion of continuous image to digital image is: <span class="text-success" data-toggle="tooltip" data-placement="right" title="Sampling"> answer </span>

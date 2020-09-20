@@ -44,6 +44,11 @@ Let us see how a linked list is maintained in the memory. In order to form a lin
   </div>
 </div>
 
+## Types of Linked List
+Following are the types of linked list.
+* **Singly Linked List** − Item navigation is forward only.
+* **Doubly Linked List** − Items can be navigated forward and backward.
+* **Circular Linked List** − Last item contains link of the first element as next and the first element has a link to the last element as previous.
 
 ## Singly Linked Lists
 A singly linked list is the simplest type of linked list in which every node contains some data and a pointer to the next node of the same data type. By saying that the node contains a pointer to the next node, we mean that the node stores the address of the next node in sequence. A singly linked list allows traversal of data only in one way. Below figure shows a singly linked list.
@@ -84,9 +89,180 @@ Step 5: EXIT
 In Step 1, we initialize the pointer variable PTR with START that contains the address of the first node. In Step 2, a while loop is executed which will compare every node’s DATA with VAL for which the search is being made. If the search is successful, that is, VAL has been found, then the address of that node is stored in POS and the control jumps to the last statement of the algorithm. However, if the search is unsuccessful, POS is set to NULL which indicates that VAL is not present in the linked list.
 
 
-## 6.2.3 Inserting a New Node in a Linked List ...
+#### Inserting a New Node in a Linked List
+We will take four cases and then see how insertion is done in each case.
+* **Case 1**: The new node is inserted at the beginning.
+* **Case 2**: The new node is inserted at the end.
+* **Case 3**: The new node is inserted after a given node.
+* **Case 4**: The new node is inserted before a given node.
 
+There are two important terms that we need to know:
+* **Overflow** is a condition that occurs when *AVAIL = NULL* or no free memory cell is present in the system.
+* **Underflow** is a condition that occurs when we try to delete a node from a linked list that is empty. This happens when START = NULL or when there are no more nodes to delete. Note that when we delete a node from a linked list, we actually have to free the memory occupied by that node. The memory is returned to the free pool so that it can be used to store other programs and data. Whatever be the case of deletion, we always change the AVAIL pointer so that it points to the address that has been recently vacated.
 
+***Case 1: Inserting a Node at the Beginning of a Linked List***
+Consider the linked list shown in Fig. 6.12. Suppose we want to add a new node with data 9 and add it as the first node of the list. Then the following changes will be done in the linked list.
+
+<img src="/assets/20MAI/ADSA/insert_beg_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 25em;">
+
+Below is the algorithm to insert a new node at the beginning of a linked list
+
+```
+Step 1: IF AVAIL = NULL
+          Write OVERFLOW
+          Go to Step 7
+        [END OF IF]
+Step 2: SET NEW_NODE = AVAIL
+Step 3: SET AVAIL = AVAIL -> NEXT
+Step 4: SET NEW_NODE -> DATA = VAL
+Step 5: SET NEW_NODE -> NEXT = START
+Step 6: SET START = NEW_NODE
+Step 7: EXIT
+```
+
+<br>
+***Case 2: Inserting a Node at the End of a Linked List***
+Consider the linked list shown in Fig. 6.14. Suppose we want to add a new node with data 9 as the last node of the list. Then the following changes will be done in the linked list.
+
+<img src="/assets/20MAI/ADSA/insert_end_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 30em;">
+
+below is the algorithm to insert a new node at the end of a linked list.
+
+```
+Step 1: IF AVAIL = NULL
+          Write OVERFLOW
+          Go to Step 1
+        [END OF IF]
+Step 2: SET NEW_NODE = AVAIL
+Step 3: SET AVAIL = AVAIL - > NEXT
+Step 4: SET NEW_NODE - > DATA = VAL
+Step 5: SET NEW_NODE - > NEXT = NULL
+Step 6: SET PTR = START
+Step 7: Repeat Step 8 while PTR - > NEXT != NULL
+Step 8:   SET PTR = PTR - > NEXT
+      [END OF LOOP]
+Step 9: SET PTR - > NEXT = NEW_NODE
+Step 10: EXIT
+```
+
+<br>
+***Case 3: Inserting a Node After a Given Node in a Linked List***
+Consider the linked list shown in Fig. 6.17. Suppose we want to add a new node with value 9 after the node containing data 3. Before discussing the changes that will be done in the linked list, let us first look at the algorithm shown below (insert a new node after a node that has value NUM)
+```
+Step 1: IF AVAIL = NULL
+          Write OVERFLOW
+          Go to Step 12
+        [END OF IF]
+Step 2: SET NEW_NODE = AVAIL
+Step 3: SET AVAIL = AVAIL - > NEXT
+Step 4: SET NEW_NODE - > DATA = VAL
+Step 5: SET PTR = START
+Step 6: SET PREPTR = PTR
+Step 7: Repeat Steps 8 and 9 while PREPTR - > DATA != NUM
+Step 8:   SET PREPTR = PTR
+Step 9:   SET PTR = PTR - > NEXT
+      [END OF LOOP]
+Step 1 : PREPTR - > NEXT = NEW_NODE
+Step 11: SET NEW_NODE - > NEXT = PTR
+Step 12: EXIT
+```
+<img src="/assets/20MAI/ADSA/insert_after_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 40em;">
+
+<br>
+***Inserting a Node Before a Given Node in a Linked List***
+Consider the linked list shown in Fig. 6.19. Suppose we want to add a new node with value 9 before the node containing 3. Before discussing the changes that will be done in the linked list, let us first look at the algorithm shown below (insert a new node before a node that has value NUM)
+
+```
+Step 1: IF AVAIL = NULL
+          Write OVERFLOW
+          Go to Step 12
+        [END OF IF]
+Step 2: SET NEW_NODE = AVAIL
+Step 3: SET AVAIL = AVAIL - > NEXT
+Step 4: SET NEW_NODE - > DATA = VAL
+Step 5: SET PTR = START
+Step 6: SET PREPTR = PTR
+Step 7: Repeat Steps 8 and 9 while PTR - > DATA != NUM
+Step 8:   SET PREPTR = PTR
+Step 9:   SET PTR = PTR - > NEXT
+        [END OF LOOP]
+Step 10: PREPTR - > NEXT = NEW_NODE
+Step 11: SET NEW_NODE - > NEXT = PTR
+Step 12: EXIT
+```
+
+<img src="/assets/20MAI/ADSA/insert_before_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 40em;">
+
+<br>
+#### Deleting a Node from a Linked List
+We will consider three cases and then see how deletion is done in each case.
+* **Case 1** : The first node is deleted.
+* **Case 2** : The last node is deleted.
+* **Case 3** : The node after a given node is deleted.
+
+***Case 1: Deleting the First Node from a Linked List***
+Consider the linked list in Fig. 6.20. When we want to delete a node from the beginning of the list, then the following changes will be done in the linked list.
+
+<img src="/assets/20MAI/ADSA/delete_start_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 10em;">
+
+The algorithm to delete a node from a linked list is
+```
+Step 1: IF START = NULL
+          Write UNDERFLOW
+          Go to Step 5
+        [END OF IT]
+Step 2: SET PTR = START
+Step 3: SET START = START --> NEXT
+Step 4: FREE PTR
+Step 5: EXIT
+```
+
+<br>
+***Case 2: Deleting the Last Node from a Linked List***
+Consider the linked list shown in Fig. 6.22. Suppose we want to delete the last node from the linked list, then the following changes will be done in the linked list.
+
+<img src="/assets/20MAI/ADSA/delete_end_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 25em;">
+
+The algorithm to delete a node from the end is given below
+
+```
+Step 1: IF START = NULL
+          Write UNDERFLOW
+          Go to Step 8
+        [END OF IF]
+Step 2: SET PTR = START
+Step 3: Repeat Steps 4 and 5 while PTR -> NEXT != NULL
+Step 4:   SET PREPTR = PTR
+Step 5:   SET PTR = PTR -> NEXT
+        [END OF LOOP]
+Step 6: SET PREPTR -> NEXT = NULL
+Step 7: FREE PTR
+Step 8: EXIT
+```
+
+<br>
+***Case 3: Deleting the Node After a Given Node in a Linked List***
+Consider the linked list shown in Fig. 6.24. Suppose we want to delete the node that succeeds the node which contains data value 4. Then the following changes will be done in the linked list.
+
+<img src="/assets/20MAI/ADSA/delete_given_ll.png" class="rounded mx-auto d-block" alt="LinkedList" style="max-width: 97%; max-height: 35em;">
+
+The algorithm to delete the node after a given node is
+```
+Step 1: IF START = NULL
+          Write UNDERFLOW
+          Go to Step 1
+        [END OF IF]
+Step 2: SET PTR = START
+Step 3: SET PREPTR = PTR
+Step 4: Repeat Steps 5 and 6 while PREPTR -> DATA != NUM
+Step 5:   SET PREPTR = PTR
+Step 6:   SET PTR = PTR -> NEXT
+        [END OF LOOP]
+Step 7: SET TEMP = PTR
+Step 8: SET PREPTR -> NEXT = PTR -> NEXT
+Step 9: FREE TEMP
+Step 10: EXIT
+```
 
 
 

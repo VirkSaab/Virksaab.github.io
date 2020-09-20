@@ -226,6 +226,110 @@ A brief description of all these points is as follows:
   * The scope of the investigation or the limits within which the problem is to be studied must be mentioned explicitly in defining a research problem.
 
 ## Importance of Literature Review in Defining a Problem
+A **literature review** is a comprehensive summary of the ideas, issues, approaches and research findings that have been published on a particular subject area or topic. However, it is not a simple description of all that the reviewer has read on the topic. It is better understood as a critical synthesis (or bringing together) of:
+* what can reasonably be asserted based on the extent of the literature findings
+* what worked and didn’t work in terms of methods of (and approaches to)
+investigation
+* what can be gleaned from the range of theoretical perspectives that have been applied
+* what gaps, inconsistencies or problems still need to be addressed in further research on the topic
+* what results may reasonably be expected to be repeatable, and under what
+circumstances.
+
+When you are preparing your own literature reviews, you will need to think about critically evaluating the research that you read. Of course, being ‘critical’ doesn’t have to mean being ‘negative’ – you can also ‘critically’ examine the strengths and positive aspects of a piece of research.
+
+***Why is the literature review so important?*** Synthesising evidence helps us to find out what we know and don’t know about what works and what doesn’t work. A good research synthesis can generally give us the most reliable estimate of the effectiveness of a specific intervention, and it can identify gaps in our knowledge that require further research. It can also give us a sense of the strength of the available evidence and the quality of the studies, thereby indicating how much confidence practitioners, service users, managers, policymakers, and the popular media should have in the results. A research synthesis can also help us find out how well a policy, programme, technique or intervention works in different subgroups of users and inform us about its potential to cause harm. Some research syntheses can shed light on the pros and cons of different ways of organising or delivering services or policies. A research synthesis that includes considerations of cost can help shape our judgements about whether a chosen policy or course of action provides good value for money.
+
+***Where does the literature review fit within the context of research?*** The near ubiquitous presence of the literature review in so many disciplines and areas of policy development must not be allowed to mask the fact that there are essentially three contexts in which a literature review will be showcased:
+1. As a component, or even entire ingredient, of a dissertation, thesis or other academic deliverable.
+2. As a peer-reviewed publication, typically in a journal or, depending upon the discipline, as a book chapter.
+3. As a report resulting from a funded research project or other commissioned research or consultancy.
+
+Reviews for knowledge support have as their endpoint the summarising and synthesis of research evidence (i.e. what currently exists and is known about a topic). They may usefully highlight gaps in the evidence base as a target for future research; seen in closest proximity within a thesis which may have the specific subsequent objective of addressing such a gap. Reviews for decision support seek to go further in bringing the existing evidence to bear on the particular individualised problem in hand. Gaps in the evidence base in this context lead to the supplementary question ‘... and what are we going to do about this issue or problem in the meantime?’ Such questions are well-typified in a survey by Lavis and colleagues (2005) who found that managers were interested in reviews that addressed:
+* decisions about continuing, starting/expanding, stopping/contracting or modifying a programme;
+* how to Àt programmes or services within an organisation or region  i.e. about governance, Ànancial and delivery arrangements;
+* how to bring about change.
+
+***What types of research question are suitable for literature review?***
+* Effectiveness questions: What effect does intervention X, compared with intervention y, have on outcome Z? What are the relative cost-benefits of x versus y?
+* Methodology questions: What research methods have previously been used to investigate phenomenon X? What are the respective strengths and weaknesses of such methods?
+* Conceptual questions: How has phenomenon X been identified and defined? Which theories have been used to explain phenomenon X? Which theory provides the best fit to findings from empirical studies? What are the main unresolved controversies? What are the underpinning epistemological and ontological foundations for the discipline?
+
+
+#### Types of Literature Review
+The two main types of literature review you are likely to come across are:
+* narrative literature reviews
+* systematic literature reviews.
+
+**Narrative literature reviews**: These are sometimes referred to as traditional literature reviews and are likely to be the most common type of literature review that you come across. They are characterised by a concern for drawing together conceptual and theoretical ideas from a range of literature. However, they can vary widely in terms of how explicit the reviewer is about how they:
+* carried out the review process
+* carried out their search strategy
+* decided on what to include and exclude from their review
+* decided on what to foreground in their synthesis of material.
+
+In this sense, they are often viewed as being less rigorous than systematic reviews, but for students and novice literature review writers they are likely to represent the first stage of your literature review journey. They can also offer a greater degree of flexibility and the facility to adapt and change as the literature review progresses.
+
+**Systematic literature reviews**:
+Systematic literature reviews are generally much more rigorous and systematic in terms of:
+* how the review process is carried out
+* how material is assessed or appraised
+* how findings are reported.
+
+They have effectively come to be seen as the ‘gold standard’ in respect of literature reviews. The focus of systematic reviews is usually very well defined and relates to practice-based contexts and issues. They aim to address as much of the published literature as possible in order to develop a comprehensive coverage of the topic under investigation.
+Systematic reviews require a high level of transparency relating to issues such as:
+
+how the research question was identified
+* how the topic area was defined
+* what data sources (e.g. particular databases) were used for searching
+* the search terms and keywords used, and whether the search strategy was
+adapted or modified
+* the extent of the literature identified through the search process
+* the selection criteria used to decide which literature to include and exclude from the final study
+* the method of the data extraction process (e.g. how data was taken from individual studies)
+* the problems and challenges involved in synthesising findings/results from a number of different studies
+* how consistency was maintained (this is particularly important in cases where reviews are carried out by teams).
+
+#### Methods Used in Literature Reviewing
+Literature reviewing involves a number of different activities and processes, which become significant at different stages of the review process. The organisation of the chapters of this book broadly reflects the order in which you would normally carry out these activities and processes. Each activity will require the reviewer to make decisions about what particular methods to use.
+
+* **Search methods**: Searching for literature can involve multiple methods, such as:
+  * manual searching – searching by hand using paper-based journals
+  * electronic database searching – making use of multiple ways of searching fields
+and records
+  * keyword searches – experimenting with different combinations of words
+  * boolean operators – using special Boolean terms to alter the scope of the search
+  * developing, applying and revising exclusion and inclusion criteria.
+
+  It’s likely that you will have come across many of these methods before in relation to literature searching that you will have done for other academic assignments. However, learning to be more structured and organised in the way that you carry out searches can take some practice.
+
+* **Data extraction methods**: The purpose of data extraction is ‘to extract the findings from each study in a consistent manner to enable later synthesis, and to extract information to enable quality appraisal so that the findings can be interpreted’ (Rutter et al., 2010: 47). In other words, the data extraction process allows the reviewer to:
+  * pull out relevant findings and data from each of the selected studies
+  * compare, contrast and pull together findings where appropriate.
+
+  To do this, the literature reviewer must first identify what kinds of data are of interest, and then devise a consistent approach to identifying and extracting this data from the literature under review. This data may be either quantitative or qualitative, or a mixture of both.
+
+  For systematic literature reviews, it is common to use a special ‘data extraction form’, which aims to ensure that a consistent, objective and unbiased approach is taken. For the same reasons, the data extraction process may be undertaken by two or more reviewers. The SCIE Systematic Research Reviews: Guidelines (Rutter et al., 2010: 91–4) includes a sample data extraction form which outlines the kinds of information that may need to be recorded, including:
+  1. Publication details (e.g. author name, year of publication, title, etc.)
+  2. Details about the nature of the study (e.g. aims, questions addressed, site of research, target population, theories/models used, etc.)
+  3. Details about the nature of practice interventions (e.g. type and aim of intervention, practice setting, rationale, implementation issues, etc.)
+  4. Outcomes and results (e.g. how outcomes are measured, what the outcomes were, what the strengths/limitations of the study were).
+
+* **Critical appraisal methods**: In appraising the literature you are aiming to:
+  * form a judgement about whether a particular publication is relevant to the topic of your literature review
+  * assess whether you think that the findings and implications are reliable and valid.
+
+  The focus of the critical appraisal is on the way in which the research has been carried out, as opposed to the effectiveness of any intervention reported on. Literature reviewers will often develop or adopt critical appraisal tools to assist them in carrying out a thorough and consistent appraisal process.
+
+  For your own literature review processes you will need to spend some time considering what kind of appraisal criteria are most appropriate to your review. Rutter et al. (2010) have identified some general issues that they would expect to be addressed in a systematic review appraisal tool for empirical studies. These include the following:
+  * Has the research been designed in such a way that can appropriately address the question?
+  * Did services users and carers have input into the design of the study?
+  * Was the research carried out in an ethical manner (e.g. with informed consent, etc.)?
+  * What kind of sampling method was used and was this appropriate for the study?
+  * Were all participants present throughout the study or did some discontinue? If so, what were the reasons for this?
+  * Were those involved in service/intervention delivery also involved in data collection and analysis?
+  * Have all the issues outlined at the outset of the study been addressed?
+  * Have the authors declared any interests (i.e. potential for gain or profit)?
+
+  Appraisal tools for qualitative studies are often developed specifically for the job in hand.
 
 
 
