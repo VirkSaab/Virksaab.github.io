@@ -117,7 +117,7 @@ fundamentals
 
 
 * **Jitender Singh Virk** and Deepti R. Bathula. “Domain Specific, Semi-Supervised Transfer
-Learning for Medical Imaging”. CODS-COMAD 2021 (submitted). [preprint](https://arxiv.org/abs/2005.11746).
+Learning for Medical Imaging”. CODS-COMAD 2021 (accepted). [preprint](https://arxiv.org/abs/2005.11746).
 * **Jitender Singh Virk**, Syed Azmal Ali, and Gurjeet Kaur. “Recent update on COVID-19 in India: Is
 locking down the country enough”. [medRxiv](https://doi.org/10.1101/2020.04.06.20053124).
 * **Jitender Singh Virk** and Abhinav Dhall. “Garuda: A Deep Learning-Based Solution for Capturing
@@ -131,8 +131,8 @@ developing world by analyzing low-resolution Satellite images using Machine Lear
 
 <h4 class="text-center"> SKILLS </h4>
 
-* **Programming Languages and Technologies**: Python, C++, Java, R, MS SQL Server, Bootstrap4, CSS3, HTML5, and markdown
-* **Tools and frameworks**: PyTorch, Keras, TensorFlow, Jupyter, Android, and Jekyll
+* **Programming Languages and Technologies**: Python, C++, Java, R, MS SQL Server, JavaScript, Bootstrap4, CSS3, HTML5, and markdown
+* **Tools and frameworks**: PyTorch, Keras, TensorFlow, Jupyter, Android, Flask, and Jekyll
 * **Languages**: English (fluent), Hindi (fluent), and Punjabi (native)
 * **Other skills**: Photography ([samples](https://500px.com/krivsj)), Adobe Photoshop, Adobe Lightroom, Internet of Things
 (IoT), Raspberry Pi, Arduino, and Bhangra (Punjabi folk dance)
