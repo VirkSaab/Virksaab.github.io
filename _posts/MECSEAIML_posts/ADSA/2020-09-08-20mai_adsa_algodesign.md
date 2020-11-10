@@ -1,11 +1,11 @@
-<!-- ---
+---
 layout: post
 type: "MECSEAIML"
 subject: "ADSA"
 section: "ADSA Lab work"
 title:  "1. Algorithm design"
 author: Jitender Singh Virk
---- -->
+---
 
 Algorithm design is of 4 types:
 1. Exhaustive Search
