@@ -109,10 +109,10 @@ building’s rooftop detection and segmentation
 </div>
 <div style="clear: both;"></div>
 
-* Developed interactive web app to visualize uninformed search algorithms in runtime. ([Webapp](http://aiuninformedsearchalgos.pythonanywhere.com/), [code](https://github.com/VirkSaab/ai_uninformed_search_algorithms_interactive_webapp), [term paper](https://cumailin-my.sharepoint.com/:b:/g/personal/20mai1035_cuchd_in/EUtqdWoxHrxLowAyAK0R1A0B3Np1bmTvT9QNkFhunJfmXg?e=KiDalN))
+* Developed interactive web app to visualize uninformed search algorithms in runtime. ([Webapp](http://aiuninformedsearchalgos.pythonanywhere.com), [code](https://github.com/VirkSaab/ai_uninformed_search_algorithms_interactive_webapp), [term paper](https://cumailin-my.sharepoint.com/:b:/g/personal/20mai1035_cuchd_in/EUtqdWoxHrxLowAyAK0R1A0B3Np1bmTvT9QNkFhunJfmXg?e=KiDalN))
 * Implemented breadth first search, depth first search, depth limited search, and iterative deepening depth first search with Romania's city map as search state space.
 
-<div id="textbox">
+<!-- <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">Auto Photomontage</p>
   <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
 </div>
@@ -124,7 +124,7 @@ building’s rooftop detection and segmentation
 <div style="clear: both;"></div>
 
 * Developed interactive web app to demonstrate this project.. ([Webapp](http://jsvirk47.pythonanywhere.com), [code](https://github.com/VirkSaab/auto_photo_montage_webapp), [term paper](https://cumailin-my.sharepoint.com/:b:/g/personal/20mai1035_cuchd_in/EW2JuFrf7o1AjjZFFbV2gD0BbAdSZrjTIPBP8h4fvoReDw?e=bEIqyv))
-* Implemented several computer vision algorithms for smooth image-to-image transition and elegant presentation.
+* Implemented several computer vision algorithms for smooth image-to-image transition and elegant presentation. -->
 
 <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">YAMLF: Yet Another Machine Learning Framework project</p>
