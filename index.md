@@ -3,51 +3,63 @@ layout: default
 title: "Home"
 ---
 
-<h1 class="text-center"> Jitender Singh Virk </h1>
-<h5 class="text-center text-muted">Deep Learning Project Assistant, CSE Department, IIT Ropar</h5>
----
+<h1 class="text-center"> <b>Jitender Singh Virk</b> </h1>
+<h5 class="text-center text-muted">75D-R, Model Town, Karnal, Haryana 132001</h5>
+<h5 class="text-center text-muted">+919050196993 | krivsj@gmail.com</h5>
+<br>
+<h4 class="text-center mb-0"> <b>EDUCATION</b> </h4>
+<hr class="cussepa">
 
-<h4 class="text-center"> EDUCATION </h4>
-
-<div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
-  <p class="alignright mb-0">Jaipur, Rajasthan - 303905</p>
+<!-- <div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Chandigarh University</p>
+  <p class="alignright mb-0">Kharar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft mb-0">Bachelor of Technology</p>
+  <p class="alignleft font-italic mb-0">Master of Engineering in Computer Science Engineering With Specialization in Artificial Intelligence & Machine Learning</p>
+  <p class="alignright mb-0">Expected Jun 2022</p>
+</div>
+<div style="clear: both;"></div>
+<br> -->
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Bachelor of Technology in Computer Science and Engineering</p>
   <p class="alignright mb-0">July 2013 - July 2017</p>
 </div>
 <div style="clear: both;"></div>
 
-Computer Science and Engineering, CGPA 7.24/10
-* Dissertation: Real-time Twitter Sentiment Analysis with Big Data and Hadoop Ecosystem
-* Undergrad term projects:
-  - 7th semester - Teacher Review System [(code)](https://github.com/VirkSaab/Teacher-Review-System)
-  - 6th semester - Home
+Cumulative GPA: 7.24 / 10.00
+* Dissertation title: Real-time Twitter Sentiment Analysis with Big Data and Hadoop Ecosystem
+* Undergrad projects: Teacher Review System [(code)](https://github.com/VirkSaab/Teacher-Review-System), Home
 Automation System ([code](https://github.com/VirkSaab/Home-Automation), [extension](https://github.com/VirkSaab/Car-Parking-Alarm-System))
 
----
 
-<h4 class="text-center"> EXPERIENCE </h4>
+<!-- <h4 class="text-center mb-0"> <b>RESEARCH INTERESTS</b></h4>
+<hr class="cussepa"> -->
 
+
+<h4 class="text-center mb-0"> <b>RESEARCH EXPERIENCE</b></h4>
+<hr class="cussepa">
 <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
   <p class="alignright mb-0">Rupnagar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Deep Learning Project Assistant, CBIL Lab</p>
+  <p class="alignleft font-italic mb-0">Machine Learning and Deep Learning Research Assistant, CBIL Lab</p>
   <p class="alignright mb-0">Mar 2019 - Present</p>
 </div>
 <div style="clear: both;"></div>
-
-* Developed a lite PyTorch based Machine Learning Python module named YAMLF for easy neural
-networks training and testing ([code](https://github.com/VirkSaab/YAMLF))
-* Researched light-weight mixed-kernels neural network for medical diagnosis problems
+* Working on risk prediction for Postpartum Depression (PPD) in collaboration with Uppsala University Hospital, Uppsala, Sweden
+* Designed, Developed and Implemented a lightweight convolutional neural network architecture using mixed asymmetric kernels ([preprint](https://arxiv.org/abs/2005.11746))
 * Organized, collected, and cleaned ~1.5TB unlabeled CT scans dataset for semi-supervised
 training
-* Researched Alzheimer’s disease and Control Normal classification using ADNI dataset
+* Worked on multi-modal classification of Alzheimer’s using MRI and PET scan (under review)
 
 
 <div id="textbox">
@@ -61,9 +73,9 @@ training
 </div>
 <div style="clear: both;"></div>
 
-* Developed Computer Vision based automatic collage maker Android app in collaboration with
+* Developed Computer Vision based Android app for automatic collage maker in collaboration with
 Samsung India
-* Developed Deep Learning based background danger detection while taking selfies Android app
+* Developed Deep Learning based Android app for background danger detection while taking selfies
 
 
 <div id="textbox">
@@ -81,6 +93,52 @@ Samsung India
 * Presented data cleaning, preprocessing, training and postprocessing end-to-end pipeline for
 building’s rooftop detection and segmentation
 
+<h4 class="text-center mb-0"> <b>PROJECTS & TRAINING</b></h4>
+<hr class="cussepa">
+
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Chandigarh University, Term Paper Project</p>
+  <p class="alignright mb-0">Kharar, Punjab</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Artificial Intelligence Search Algorithms Interactive Web App</p>
+  <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed interactive web app to visualize uninformed search algorithms in runtime. ([Webapp](http://aiuninformedsearchalgos.pythonanywhere.com/), [code](https://github.com/VirkSaab/ai_uninformed_search_algorithms_interactive_webapp), [term paper](https://cumailin-my.sharepoint.com/:b:/g/personal/20mai1035_cuchd_in/EUtqdWoxHrxLowAyAK0R1A0B3Np1bmTvT9QNkFhunJfmXg?e=KiDalN))
+* Implemented breadth first search, depth first search, depth limited search, and iterative deepening depth first search with Romania's city map as search state space.
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Chandigarh University, Term Paper Project</p>
+  <p class="alignright mb-0">Kharar, Punjab</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Auto Photomontage</p>
+  <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed interactive web app to demonstrate this project.. ([Webapp](http://jsvirk47.pythonanywhere.com), [code](https://github.com/VirkSaab/auto_photo_montage_webapp), [term paper](https://cumailin-my.sharepoint.com/:b:/g/personal/20mai1035_cuchd_in/EW2JuFrf7o1AjjZFFbV2gD0BbAdSZrjTIPBP8h4fvoReDw?e=bEIqyv))
+* Implemented several computer vision algorithms for smooth image-to-image transition and elegant presentation.
+
+<div id="textbox">
+  <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
+  <p class="alignright mb-0">Rupnagar, Punjab</p>
+</div>
+<div style="clear: both;"></div>
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">YAMLF: Yet Another Machine Learning Framework project</p>
+  <p class="alignright mb-0">Jun 2020 - Jul 2020</p>
+</div>
+<div style="clear: both;"></div>
+
+* Developed a lite PyTorch based Machine Learning Python wapper module named YAMLF for easy neural
+networks training and testing ([code](https://github.com/VirkSaab/YAMLF))
+* Implemented several boiler-plate functions for supervised & semi-supervised learning image & text classification.
 
 <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">Axis India Machine Learning Lab</p>
@@ -93,6 +151,7 @@ building’s rooftop detection and segmentation
 </div>
 <div style="clear: both;"></div>
 
+* Implemented Face Recognition and Verification using Deep Learning and Transfer Learning
 * Developed road lane detection in real-time GTA 5 video game ([code](https://github.com/VirkSaab/Lane-detection-in-GTA-5-Video-Game))
 * Studied Computer Vision, Machine Learning, Deep Learning, and Reinforcement Learning
 fundamentals
@@ -111,36 +170,35 @@ fundamentals
 
 * Developed real-time Twitter sentiment analysis using Big Data and Hadoop ([code](https://github.com/VirkSaab/Twitter-Sentiment-Analysis))
 
----
 
-<h4 class="text-center"> PUBLICATIONS </h4>
+<h4 class="text-center mb-0"> <b>PUBLICATIONS & ARTICLES</b> </h4>
+<hr class="cussepa">
 
-
-* **Jitender Singh Virk** and Deepti R. Bathula. “Domain Specific, Semi-Supervised Transfer
-Learning for Medical Imaging”. CODS-COMAD 2021 (accepted). [preprint](https://arxiv.org/abs/2005.11746).
-* **Jitender Singh Virk**, Syed Azmal Ali, and Gurjeet Kaur. “Recent update on COVID-19 in India: Is
+* **Jitender Singh Virk**, Deepti R. Bathula. “Domain Specific, Semi-Supervised Transfer
+Learning for Medical Imaging”. CODS-COMAD 2021. [Paper](https://dl.acm.org/doi/10.1145/3430984.3431022), [preprint](https://arxiv.org/abs/2005.11746).
+* Apoorva Sikka, Skand Peri, **Jitender Singh Virk**, Deepti R. Bathula “MRI to PET Cross-Modality Translation using Globally and Locally Aware GAN for Multi-Modal Diagnosis of Alzheimer’s Disease” Medical Image Analysis. 2020 (under review).
+* **Jitender Singh Virk**, Syed Azmal Ali, Gurjeet Kaur. “Recent update on COVID-19 in India: Is
 locking down the country enough”. [medRxiv](https://doi.org/10.1101/2020.04.06.20053124).
-* **Jitender Singh Virk** and Abhinav Dhall. “Garuda: A Deep Learning-Based Solution for Capturing
+* **Jitender Singh Virk**, Abhinav Dhall. “Garuda: A Deep Learning-Based Solution for Capturing
 Selfies Safely” ACM IUI 2019. [IUI](https://doi.org/10.1145/3308557.3308669), [demo](https://sites.google.com/iitrpr.ac.in/garuda), [Times of India (TOI)](https://timesofindia.indiatimes.com/city/chandigarh/application-to-prevent-selfie-deaths/articleshow/66563387.cms),
 [Gadgets Now](https://www.gadgetsnow.com/tech-news/iit-ropar-develops-app-to-prevent-selfie-deaths/articleshow/66565825.cms).
-* Rudradeb Mitra, **Jitender Singh Virk**, and Iresh Mishra. “Increasing solar adoption in the
+* Rudradeb Mitra, **Jitender Singh Virk**, Iresh Mishra. “Increasing solar adoption in the
 developing world by analyzing low-resolution Satellite images using Machine Learning”.
 [medium.com](https://medium.com/savera-ai/using-machine-learning-semantic-segmentation-to-identify-rooftops-in-low-resolution-satellite-54a900137e10); [datasciencecentral.com](https://www.datasciencecentral.com/profiles/blogs/using-semantic-segmentation-to-identify-rooftops-in-low).
 
----
 
-<h4 class="text-center"> SKILLS </h4>
+<h4 class="text-center mb-0"> <b>SKILLS & INTERESTS</b> </h4>
+<hr class="cussepa">
 
 * **Programming Languages and Technologies**: Python, C++, Java, R, MS SQL Server, JavaScript, Bootstrap4, CSS3, HTML5, and markdown
 * **Tools and frameworks**: PyTorch, Keras, TensorFlow, Jupyter, Android, Flask, and Jekyll
 * **Languages**: English (fluent), Hindi (fluent), and Punjabi (native)
-* **Other skills**: Photography ([samples](https://500px.com/krivsj)), Adobe Photoshop, Adobe Lightroom, Internet of Things
+* **Interests and hobbies**: Street Photography ([500px](https://500px.com/krivsj)), Adobe Photoshop CS6, CC-19, Adobe Lightroom 5, Internet of Things
 (IoT), Raspberry Pi, Arduino, and Bhangra (Punjabi folk dance)
 
----
 
-<h4 class="text-center"> LEADERSHIP AND TEAMWORK EXPERIENCE </h4>
-
+<h4 class="text-center mb-0"> <b>LEADERSHIP & TEAMWORK EXPERIENCE</b> </h4>
+<hr class="cussepa">
 <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">Sikkim Manipal Institute of Technology</p>
   <p class="alignright mb-0">Majitar, East Sikkim</p>
@@ -184,9 +242,6 @@ developing world by analyzing low-resolution Satellite images using Machine Lear
 
 * Designed and Deployed National Level RC car racing event Arena of size 70ft x 80ft
 
-
----
-`That's all.`
 
 
 

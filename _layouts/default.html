@@ -2,54 +2,51 @@
 
 <body>
 
-  <div class="d-flex" id="wrapper">
+    <div class="d-flex" id="wrapper">
 
-    <!-- Page Content -->
-    <div id="page-content-wrapper">
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
 
-      {% include navbar.html %}
-      {% if page.title == "Home" %}
-        <div class="container-fluid pt-3 pl-3 pr-3 pb-3 text-justify" style="font-size: larger;">
-          {{ content }}
-        </div>
-      {% else %}
-      <div class="container-fluid pt-3 pl-3 pr-3 pb-3">
-        {{ content }}
-        <div class="card-columns">
-          {% for post in site.posts %}
-            {% if post.type == page.title %}
-              <div class="card text-white bg-dark mb-4">
-                <div class="card-body">
-                  <h5 class="card-title"> <a href="{{ post.url }}" class="text-white"> {{post.title}} </a></h5>
-                  <p class="card-text">{{ post.excerpt | truncate: 100}}</p>
-                  <a href="{{ post.url }}" class="card-link text-warning">read more</a>
+            {% include navbar.html %} {% if page.title == "Home" %}
+            <div class="container-fluid mt-2 text-justify" style="font-size: larger; width: 98%;">
+                {{ content }}
+            </div>
+            {% else %}
+            <div class="container-fluid pt-3 pl-3 pr-3 pb-3">
+                {{ content }}
+                <div class="card-columns">
+                    {% for post in site.posts %} {% if post.type == page.title %}
+                    <div class="card text-white bg-dark mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title"> <a href="{{ post.url }}" class="text-white"> {{post.title}} </a></h5>
+                            <p class="card-text">{{ post.excerpt | truncate: 100}}</p>
+                            <a href="{{ post.url }}" class="card-link text-warning">read more</a>
+                        </div>
+                        <div class="card-footer text-right pt-0 pb-0">
+                            <small class="text-light">{{ post.date | date: "%d %b %Y" }}</small>
+                        </div>
+                    </div>
+                    {% endif %} {% endfor %}
                 </div>
-                <div class="card-footer text-right pt-0 pb-0">
-                  <small class="text-light">{{ post.date | date: "%d %b %Y" }}</small>
-                </div>
-              </div>
+            </div>
             {% endif %}
-          {% endfor %}
         </div>
-      </div>
-      {% endif %}
+        <!-- /#page-content-wrapper -->
+
     </div>
-    <!-- /#page-content-wrapper -->
+    <!-- /#wrapper -->
 
-  </div>
-  <!-- /#wrapper -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="/assets/vendor/jquery/jquery.min.js"></script>
-  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Menu Toggle Script -->
-  <script>
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-    });
-  </script>
+    <!-- Menu Toggle Script -->
+    <script>
+        $("#menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#wrapper").toggleClass("toggled");
+        });
+    </script>
 
 
 </body>

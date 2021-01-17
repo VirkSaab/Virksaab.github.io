@@ -1,19 +1,22 @@
 body {
-  padding-top: 56px;
+    padding-top: 56px;
+    font-family: Arial, sans-serif !important;
 }
 
 h2 {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
+
 /* pygments highlight */
+
 .highlight {
-  border: 1px solid #cfcfcf;
-  padding-top: 10px;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 2px;
-  background: #f7f7f7;
-  line-height: 1.21429em;
-  margin-bottom: 10px;
+    border: 1px solid #cfcfcf;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 2px;
+    background: #f7f7f7;
+    line-height: 1.21429em;
+    margin-bottom: 10px;
 }
