@@ -5,31 +5,32 @@ title: "Home"
 
 <h1 class="text-center"> <b>Jitender Singh Virk</b> </h1>
 <h5 class="text-center text-muted">75D-R, Model Town, Karnal, Haryana 132001</h5>
-<h5 class="text-center text-muted">+919050196993 | krivsj@gmail.com</h5>
+<h5 class="text-center text-muted mb-0">+919050196993 | krivsj@gmail.com</h5>
 <br>
-<h4 class="text-center mb-0"> <b>EDUCATION</b> </h4>
+<h4 class="text-center mb-0 mt-0"> <b>EDUCATION</b> </h4>
 <hr class="cussepa">
 
-<!-- <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Chandigarh University</p>
-  <p class="alignright mb-0">Kharar, Punjab</p>
-</div>
-<div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Master of Engineering in Computer Science Engineering With Specialization in Artificial Intelligence & Machine Learning</p>
+  <p class="alignleft font-weight-bold mb-0">Master of Engineering in Computer Science and Engineering (Artificial Intelligence & Machine Learning Specialization)</p>
   <p class="alignright mb-0">Expected Jun 2022</p>
 </div>
 <div style="clear: both;"></div>
-<br> -->
+<div id="textbox">
+  <p class="alignleft font-italic mb-0">Chandigarh University</p>
+  <p class="alignright mb-0">Kharar, Punjab</p>
+</div>
+<div style="clear: both;"></div>
+* First year graduate student
+<br>
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
-  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+  <p class="alignleft font-weight-bold mb-0">Bachelor of Technology in Computer Science and Engineering</p>
+  <p class="alignright mb-0">July 2013 - July 2017</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Bachelor of Technology in Computer Science and Engineering</p>
-  <p class="alignright mb-0">July 2013 - July 2017</p>
+  <p class="alignleft font-italic mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -46,13 +47,13 @@ Automation System ([code](https://github.com/VirkSaab/Home-Automation), [extensi
 <h4 class="text-center mb-0"> <b>RESEARCH EXPERIENCE</b></h4>
 <hr class="cussepa">
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
-  <p class="alignright mb-0">Rupnagar, Punjab</p>
+  <p class="alignleft font-weight-bold mb-0">Machine Learning and Computer Vision Research Assistant</p>
+  <p class="alignright mb-0">Mar 2019 - Present</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Machine Learning and Deep Learning Research Assistant, CBIL Lab</p>
-  <p class="alignright mb-0">Mar 2019 - Present</p>
+  <p class="alignleft font-italic mb-0">CBIL Lab, Indian Institute of Technology (IIT) Ropar</p>
+  <p class="alignright mb-0">Rupnagar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 * Working on risk prediction for Postpartum Depression (PPD) in collaboration with Uppsala University Hospital, Uppsala, Sweden
@@ -63,13 +64,13 @@ training
 
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
-  <p class="alignright mb-0">Rupnagar, Punjab</p>
+  <p class="alignleft font-weight-bold mb-0">Computer Vision and Deep Learning Research Assistant</p>
+  <p class="alignright mb-0">Aug 2018 - Feb 2019</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Computer Vision and Deep Learning Research Assistant, LASII group</p>
-  <p class="alignright mb-0">Aug 2018 - Feb 2019</p>
+  <p class="alignleft font-italic mb-0">LASII group, Indian Institute of Technology (IIT) Ropar</p>
+  <p class="alignright mb-0">Rupnagar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -79,13 +80,13 @@ Samsung India
 
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Savera.ai startup (Sungineers Energy Private Limited)</p>
-  <p class="alignright mb-0">Work from home</p>
+  <p class="alignleft font-weight-bold mb-0">Machine Learning/Artificial Intelligence Innovation Fellow</p>
+  <p class="alignright mb-0">July 2018 - Dec 2018</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Machine Learning and Computer Vision Innovation Fellow</p>
-  <p class="alignright mb-0">July 2018 - Dec 2018</p>
+  <p class="alignleft font-italic mb-0">Savera.ai startup (Sungineers Energy Private Limited)</p>
+  <p class="alignright mb-0">Work from home</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -98,13 +99,13 @@ building’s rooftop detection and segmentation
 
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Chandigarh University, Term Paper Project</p>
-  <p class="alignright mb-0">Kharar, Punjab</p>
+  <p class="alignleft font-weight-bold mb-0">Artificial Intelligence Search Algorithms Interactive Web App</p>
+  <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Artificial Intelligence Search Algorithms Interactive Web App</p>
-  <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
+  <p class="alignleft font-italic mb-0">Term Paper Project, Chandigarh University</p>
+  <p class="alignright mb-0">Kharar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -112,13 +113,13 @@ building’s rooftop detection and segmentation
 * Implemented breadth first search, depth first search, depth limited search, and iterative deepening depth first search with Romania's city map as search state space.
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Chandigarh University, Term Paper Project</p>
-  <p class="alignright mb-0">Kharar, Punjab</p>
+  <p class="alignleft font-weight-bold mb-0">Auto Photomontage</p>
+  <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Auto Photomontage</p>
-  <p class="alignright mb-0">Nov 2020 - Jan 2021</p>
+  <p class="alignleft font-italic mb-0">Term Paper Project, Chandigarh University</p>
+  <p class="alignright mb-0">Kharar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -126,13 +127,13 @@ building’s rooftop detection and segmentation
 * Implemented several computer vision algorithms for smooth image-to-image transition and elegant presentation.
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Indian Institute of Technology (IIT) Ropar</p>
-  <p class="alignright mb-0">Rupnagar, Punjab</p>
+  <p class="alignleft font-weight-bold mb-0">YAMLF: Yet Another Machine Learning Framework project</p>
+  <p class="alignright mb-0">Jun 2020 - Jul 2020</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">YAMLF: Yet Another Machine Learning Framework project</p>
-  <p class="alignright mb-0">Jun 2020 - Jul 2020</p>
+  <p class="alignleft font-italic mb-0">CBIL Lab, Indian Institute of Technology (IIT) Ropar</p>
+  <p class="alignright mb-0">Rupnagar, Punjab</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -141,13 +142,13 @@ networks training and testing ([code](https://github.com/VirkSaab/YAMLF))
 * Implemented several boiler-plate functions for supervised & semi-supervised learning image & text classification.
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Axis India Machine Learning Lab</p>
-  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+  <p class="alignleft font-weight-bold mb-0">AI Research Fellow</p>
+  <p class="alignright mb-0">Aug 2017 - May 2018</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">AI Research Fellow</p>
-  <p class="alignright mb-0">Aug 2017 - May 2018</p>
+  <p class="alignleft font-italic mb-0">Axis India Machine Learning Lab</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -158,13 +159,13 @@ fundamentals
 
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Headstart Education | IBM Bussiness Partner</p>
-  <p class="alignright mb-0">New Delhi, India</p>
+  <p class="alignleft font-weight-bold mb-0">Undergraduate Intern</p>
+  <p class="alignright mb-0">Feb 2017 - July 2017</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Undergraduate Intern</p>
-  <p class="alignright mb-0">Feb 2017 - July 2017</p>
+  <p class="alignleft font-italic mb-0">Headstart Education | IBM Bussiness Partner</p>
+  <p class="alignright mb-0">New Delhi, India</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -200,13 +201,13 @@ developing world by analyzing low-resolution Satellite images using Machine Lear
 <h4 class="text-center mb-0"> <b>LEADERSHIP & TEAMWORK EXPERIENCE</b> </h4>
 <hr class="cussepa">
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">Sikkim Manipal Institute of Technology</p>
-  <p class="alignright mb-0">Majitar, East Sikkim</p>
+  <p class="alignleft font-weight-bold mb-0">Machine Learning Workshop Assistant speaker</p>
+  <p class="alignright mb-0">21-23 Aug 2017</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">Machine Learning Workshop Assistant speaker</p>
-  <p class="alignright mb-0">21-23 Aug 2017</p>
+  <p class="alignleft font-italic mb-0"> Sikkim Manipal Institute of Technology</p>
+  <p class="alignright mb-0">Majitar, East Sikkim</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -214,13 +215,13 @@ developing world by analyzing low-resolution Satellite images using Machine Lear
 
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
-  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+  <p class="alignleft font-weight-bold mb-0">JU Rhythm (techno-cultural fest), RC Car event Head-Coordinator</p>
+  <p class="alignright mb-0">Mar 2016</p>  
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">JU Rhythm (techno-cultural fest), RC Car event Head-Coordinator</p>
-  <p class="alignright mb-0">Mar 2016</p>
+  <p class="alignleft font-italic mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
 </div>
 <div style="clear: both;"></div>
 
@@ -230,13 +231,13 @@ developing world by analyzing low-resolution Satellite images using Machine Lear
 
 
 <div id="textbox">
-  <p class="alignleft font-weight-bold mb-0">JECRC University</p>
-  <p class="alignright mb-0">Jaipur, Rajasthan</p>
+  <p class="alignleft font-weight-bold mb-0">JU Rhythm (techno-cultural fest), RC Car event Arena-Coordinator</p>
+  <p class="alignright mb-0">Feb 2015</p>
 </div>
 <div style="clear: both;"></div>
 <div id="textbox">
-  <p class="alignleft font-italic mb-0">JU Rhythm (techno-cultural fest), RC Car event Arena-Coordinator</p>
-  <p class="alignright mb-0">Feb 2015</p>
+  <p class="alignleft font-italic mb-0">JECRC University</p>
+  <p class="alignright mb-0">Jaipur, Rajasthan</p>
 </div>
 <div style="clear: both;"></div>
 
