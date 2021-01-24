@@ -3,11 +3,10 @@ layout: post
 type: "WorkTree"
 subject: "Maths"
 section: "Probability"
-title:  "Introduction to Probability"
+title:  "Basic Probability"
 author: Jitender Singh Virk
 ---
 
-# Basic Probability
 [Source](https://www.youtube.com/watch?v=SrEmzdOT65s&ab_channel=zedstatistics)
 
 

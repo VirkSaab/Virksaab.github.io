@@ -10,7 +10,7 @@ title: "Home"
 <h4 class="text-center mb-0 mt-0"> <b>EDUCATION</b> </h4>
 <hr class="cussepa">
 
-<div id="textbox">
+<!-- <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">Master of Engineering in Computer Science and Engineering (Artificial Intelligence & Machine Learning Specialization)</p>
   <p class="alignright mb-0">Expected Jun 2022</p>
 </div>
@@ -21,7 +21,7 @@ title: "Home"
 </div>
 <div style="clear: both;"></div>
 * First year graduate student
-<br>
+<br> -->
 
 <div id="textbox">
   <p class="alignleft font-weight-bold mb-0">Bachelor of Technology in Computer Science and Engineering</p>
