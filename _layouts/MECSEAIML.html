@@ -24,15 +24,17 @@
       <div class="container-fluid">
         <div class="row justify-content-center align-items-start">
           {% for subject in site.MECSEAIML %}
-            <div class="col-sm pb-2">
-              <div class="card text-white bg-dark">
-                <div class="card-header pb-0"><h5>{{ subject.name }}</h5></div>
-                <div class="card-body pt-1">
-                  <p class="card-text">{{ subject.content }}</p>
+            {% if subject.visibility == "show" %}
+              <div class="col-sm pb-2">
+                <div class="card text-white bg-dark">
+                  <div class="card-header pb-0"><h5>{{ subject.name }}</h5></div>
+                  <div class="card-body pt-1">
+                    <p class="card-text">{{ subject.content }}</p>
+                  </div>
                 </div>
-              </div>
 
-            </div>
+              </div>
+            {% endif %}
           {% endfor %}
         </div>
       </div>
