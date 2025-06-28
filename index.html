@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Jitender Singh CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+    }
+    .pdf-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      background: #f8f9fa;
+    }
+    .pdf-embed {
+      width: 80vw;
+      height: 90vh;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      background: #fff;
+    }
+    @media (max-width: 900px) {
+      .pdf-embed {
+        width: 98vw;
+        height: 90vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="pdf-container">
+    <embed
+      src="JitenderSingh_CV_28Jun2025.pdf"
+      type="application/pdf"
+      class="pdf-embed"
+      />
+  </div>
+</body>
+</html>
