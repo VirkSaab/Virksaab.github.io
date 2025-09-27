@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-cyber-primary/20;
+  }
+  
+  body {
+    font-family: "Cascadia Code", monospace;
+    font-feature-settings: "cv01", "cv02", "cv03", "cv04";
+  }
+}
+
+@layer components {
+  .cyber-border {
+    @apply border border-cyber-primary/30 relative;
+  }
+  
+  .cyber-border::before {
+    content: '';
+    @apply absolute -top-px -left-px w-2 h-2 border-l border-t border-cyber-primary;
+  }
+  
+  .cyber-border::after {
+    content: '';
+    @apply absolute -bottom-px -right-px w-2 h-2 border-r border-b border-cyber-primary;
+  }
+  
+  .cyber-glow {
+    @apply shadow-[0_0_5px_rgba(0,255,65,0.3)];
+  }
+  
+  .cyber-text-glow {
+    text-shadow: 0 0 3px rgba(0, 255, 65, 0.3);
+  }
+  
+  .cyber-button {
+    @apply px-6 py-3 bg-transparent border border-cyber-primary text-cyber-primary 
+           hover:bg-cyber-primary/10 transition-all duration-200
+           font-mono text-sm uppercase tracking-wider;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* Custom scrollbar for floating card */
+.dynamic-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dynamic-scrollbar::-webkit-scrollbar-track {
+  background: rgba(16, 16, 16, 0.5);
+}
+
+.dynamic-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #7FDBCA);
+  border: 1px solid var(--scrollbar-border, rgba(127, 219, 202, 0.25));
+}
+
+.dynamic-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb, #7FDBCA);
+  filter: brightness(0.9);
+  box-shadow: 0 0 10px var(--scrollbar-glow, rgba(127, 219, 202, 0.3));
+}
