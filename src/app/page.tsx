@@ -1178,7 +1178,6 @@ export default function Home() {
             </div>
             <div className="text-sm mb-6 text-gray-300">
               Experience an immersive journey through my professional matrix<br />
-              <span className="text-xs text-gray-500">Complete with cyberpunk sound effects</span>
             </div>
             <div className="flex items-center justify-center space-x-2 text-sm text-cyber-primary bg-cyber-dark/50 px-4 py-2 rounded border border-cyber-primary/20">
               <span>CLICK TO CONTINUE</span>
