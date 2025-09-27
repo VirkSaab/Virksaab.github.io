@@ -9,15 +9,23 @@ const useCyberpunkSounds = () => {
   const [isAudioEnabled, setIsAudioEnabled] = useState(false)
 
   useEffect(() => {
-    // Initialize audio context on first user interaction
+    // Try to initialize audio context immediately
     const initAudio = () => {
       if (!audioContextRef.current) {
-        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
-        setIsAudioEnabled(true)
+        try {
+          audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+          setIsAudioEnabled(true)
+          console.log('🔊 Audio enabled immediately!')
+        } catch (error) {
+          console.log('🔊 Audio requires user interaction, will enable on first click')
+        }
       }
     }
 
-    // Add event listeners for first user interaction
+    // Try to init immediately
+    initAudio()
+
+    // Fallback: Add event listeners for first user interaction
     const events = ['click', 'touchstart', 'keydown']
     events.forEach(event => {
       document.addEventListener(event, initAudio, { once: true })
@@ -30,13 +38,56 @@ const useCyberpunkSounds = () => {
     }
   }, [])
 
-  const createCyberpunkSound = useCallback((type: 'click' | 'hover' | 'open' | 'close') => {
-    if (!audioContextRef.current || !isAudioEnabled) return
+  const createCyberpunkSound = useCallback(async (type: 'click' | 'hover' | 'open' | 'close' | 'shuffle') => {
+    if (!audioContextRef.current) return
 
     const ctx = audioContextRef.current
+    
+    // Resume audio context if suspended
+    if (ctx.state === 'suspended') {
+      try {
+        await ctx.resume()
+        setIsAudioEnabled(true)
+      } catch (error) {
+        console.log('🔊 Could not resume audio context')
+        return
+      }
+    }
+    
     const now = ctx.currentTime
 
-    // Create oscillator for the main tone
+    if (type === 'click') {
+      console.log('🔊 NEW CLICK SOUND PLAYING!')
+      // Create a wood block / percussion click sound
+      const oscillator = ctx.createOscillator()
+      const gainNode = ctx.createGain()
+      const filterNode = ctx.createBiquadFilter()
+
+      // Connect nodes
+      oscillator.connect(filterNode)
+      filterNode.connect(gainNode)
+      gainNode.connect(ctx.destination)
+
+      // Wood block percussion sound
+      oscillator.frequency.setValueAtTime(800, now)
+      oscillator.type = 'triangle'
+      
+      // Sharp attack and quick decay like a wood block
+      gainNode.gain.setValueAtTime(0.3, now)
+      gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.08)
+      
+      // Filter for percussive character
+      filterNode.type = 'highpass'
+      filterNode.frequency.setValueAtTime(400, now)
+      filterNode.Q.setValueAtTime(1, now)
+
+      // Start and stop
+      oscillator.start(now)
+      oscillator.stop(now + 0.1)
+      return
+    }
+
+    // Create oscillator for other sounds
     const oscillator = ctx.createOscillator()
     const gainNode = ctx.createGain()
     const filterNode = ctx.createBiquadFilter()
@@ -48,45 +99,48 @@ const useCyberpunkSounds = () => {
 
     // Configure sound based on type
     switch (type) {
-      case 'click':
-        // Sharp, quick blip
-        oscillator.frequency.setValueAtTime(800, now)
-        oscillator.frequency.exponentialRampToValueAtTime(400, now + 0.1)
-        filterNode.frequency.setValueAtTime(2000, now)
-        gainNode.gain.setValueAtTime(0.1, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.15)
+
+      case 'hover':
+        // Quick tech beep
+        oscillator.frequency.setValueAtTime(900, now)
+        oscillator.frequency.exponentialRampToValueAtTime(950, now + 0.02)
+        filterNode.frequency.setValueAtTime(2500, now)
+        gainNode.gain.setValueAtTime(0.04, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.04)
         oscillator.type = 'square'
         break
 
-      case 'hover':
-        // Subtle, soft beep
-        oscillator.frequency.setValueAtTime(600, now)
-        oscillator.frequency.exponentialRampToValueAtTime(650, now + 0.05)
-        filterNode.frequency.setValueAtTime(1500, now)
-        gainNode.gain.setValueAtTime(0.03, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.1)
-        oscillator.type = 'sine'
-        break
-
       case 'open':
-        // Rising cyberpunk tone
-        oscillator.frequency.setValueAtTime(300, now)
-        oscillator.frequency.exponentialRampToValueAtTime(800, now + 0.2)
+        // Professional access granted sound
+        oscillator.frequency.setValueAtTime(440, now)
+        oscillator.frequency.exponentialRampToValueAtTime(880, now + 0.06)
+        oscillator.frequency.exponentialRampToValueAtTime(1320, now + 0.12)
         filterNode.frequency.setValueAtTime(1000, now)
-        filterNode.frequency.exponentialRampToValueAtTime(3000, now + 0.2)
-        gainNode.gain.setValueAtTime(0.08, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.25)
+        filterNode.frequency.exponentialRampToValueAtTime(6000, now + 0.12)
+        gainNode.gain.setValueAtTime(0.1, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.02, now + 0.15)
         oscillator.type = 'sawtooth'
         break
 
       case 'close':
-        // Falling tone
-        oscillator.frequency.setValueAtTime(800, now)
-        oscillator.frequency.exponentialRampToValueAtTime(200, now + 0.15)
-        filterNode.frequency.setValueAtTime(2000, now)
-        gainNode.gain.setValueAtTime(0.06, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.2)
-        oscillator.type = 'triangle'
+        // Quick tech close sound
+        oscillator.frequency.setValueAtTime(1000, now)
+        oscillator.frequency.exponentialRampToValueAtTime(400, now + 0.06)
+        filterNode.frequency.setValueAtTime(3000, now)
+        gainNode.gain.setValueAtTime(0.07, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.08)
+        oscillator.type = 'square'
+        break
+
+      case 'shuffle':
+        // Card shuffle scanning sound
+        oscillator.frequency.setValueAtTime(1200, now)
+        oscillator.frequency.exponentialRampToValueAtTime(1400, now + 0.03)
+        filterNode.frequency.setValueAtTime(2500, now)
+        filterNode.frequency.exponentialRampToValueAtTime(3500, now + 0.03)
+        gainNode.gain.setValueAtTime(0.05, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.05)
+        oscillator.type = 'sine'
         break
     }
 
@@ -94,9 +148,9 @@ const useCyberpunkSounds = () => {
     filterNode.type = 'lowpass'
     filterNode.Q.setValueAtTime(5, now)
 
-    // Start and stop oscillator
+    // Start and stop oscillator - quick tech sounds
     oscillator.start(now)
-    oscillator.stop(now + 0.3)
+    oscillator.stop(now + 0.12)
 
   }, [isAudioEnabled])
 
@@ -116,15 +170,27 @@ export default function Home() {
   const [selectedFolder, setSelectedFolder] = useState<string | null>(null)
   const [hoveredFolder, setHoveredFolder] = useState<string | null>(null)
   const [folderOrder, setFolderOrder] = useState<string[]>(['personal', 'experience', 'skills', 'projects', 'education'])
-  const [isInitializing, setIsInitializing] = useState(true)
+  const [isInitializing, setIsInitializing] = useState(false)
   const [currentCycleIndex, setCurrentCycleIndex] = useState(-1)
   const [isAutoScrolling, setIsAutoScrolling] = useState(false)
   const [userInteracted, setUserInteracted] = useState(false)
+  const [showAudioPrompt, setShowAudioPrompt] = useState(true)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const autoScrollRef = useRef<NodeJS.Timeout | null>(null)
   
   // Initialize cyberpunk sound system
   const { playSound, isAudioEnabled } = useCyberpunkSounds()
+
+  // Handle audio prompt click
+  const handleAudioPromptClick = () => {
+    setShowAudioPrompt(false)
+    // Play a test sound to confirm audio is working
+    playSound('shuffle')
+    // Start the initialization animation after a brief delay
+    setTimeout(() => {
+      setIsInitializing(true)
+    }, 300)
+  }
 
   // Initialization cycling animation
   useEffect(() => {
@@ -144,10 +210,15 @@ export default function Home() {
               // Move personal folder to top of stack
               const newOrder = [...folderOrder.filter(id => id !== 'personal'), 'personal']
               setFolderOrder(newOrder)
+              // Play open sound when auto-opening personal folder
+              playSound('open')
             }, 100) // Ultra-fast auto-opening
           }, 100) // Ultra-short pause before settling
           return prev
         }
+        
+        // Play shuffle sound for each card cycle
+        playSound('shuffle')
         return nextIndex
       })
     }, 200) // Ultra-fast cycling - each card highlighted for only 200ms
@@ -1080,6 +1151,43 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full bg-gradient-to-br from-cyber-darker via-black to-cyber-dark relative overflow-hidden">
+      {/* Audio Prompt Overlay */}
+      {showAudioPrompt && (
+        <motion.div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center cursor-pointer"
+          onClick={handleAudioPromptClick}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <motion.div
+            className="text-center p-8 border border-cyber-primary/30 bg-cyber-dark/90 rounded-lg backdrop-blur-md max-w-md mx-4"
+            initial={{ scale: 0.9, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="text-3xl mb-2 text-cyber-primary font-bold">
+              WELCOME
+            </div>
+            <div className="text-lg mb-4 text-gray-200">
+              to Jitender Singh's
+            </div>
+            <div className="text-2xl mb-6 text-cyber-primary glitch-text font-bold">
+              Portfolio
+            </div>
+            <div className="text-sm mb-6 text-gray-300">
+              Experience an immersive journey through my professional matrix<br />
+              <span className="text-xs text-gray-500">Complete with cyberpunk sound effects</span>
+            </div>
+            <div className="flex items-center justify-center space-x-2 text-sm text-cyber-primary bg-cyber-dark/50 px-4 py-2 rounded border border-cyber-primary/20">
+              <span>CLICK TO CONTINUE</span>
+              <div className="w-2 h-2 rounded-full bg-cyber-primary animate-pulse ml-2"></div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,65,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,65,0.02)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
       
@@ -1241,12 +1349,12 @@ export default function Home() {
               </p>
               
               {/* Audio Status Indicator */}
-              <div className="flex items-center justify-center mt-2 space-x-2 text-xs">
-                <div className={`w-2 h-2 rounded-full ${isAudioEnabled ? 'bg-cyber-primary animate-pulse' : 'bg-gray-600'}`}></div>
-                <span className={`font-mono ${isAudioEnabled ? 'text-cyber-primary' : 'text-gray-500'}`}>
-                  AUDIO: {isAudioEnabled ? 'ENABLED' : 'CLICK TO ENABLE'}
-                </span>
-              </div>
+          <div className="flex items-center justify-center mt-2 space-x-2 text-xs">
+            <div className="w-2 h-2 rounded-full bg-cyber-primary animate-pulse"></div>
+            <span className="font-mono text-cyber-primary">
+              AUDIO: SYSTEM ACTIVE
+            </span>
+          </div>
             </motion.div>
           </div>
 
