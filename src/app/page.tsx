@@ -189,6 +189,27 @@ export default function Home() {
     }, 300)
   }
 
+  // Auto-start on mobile (no welcome popup)
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobile = window.innerWidth < 640 // sm breakpoint
+      if (isMobile) {
+        setShowAudioPrompt(false)
+        // Start initialization immediately on mobile
+        setTimeout(() => {
+          setIsInitializing(true)
+        }, 500)
+      }
+    }
+
+    // Check on mount
+    checkMobile()
+    
+    // Check on resize
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   // Initialization cycling animation
   useEffect(() => {
     if (!isInitializing) return
@@ -1148,10 +1169,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen w-full bg-gradient-to-br from-cyber-darker via-black to-cyber-dark relative overflow-hidden">
-      {/* Audio Prompt Overlay */}
+      {/* Audio Prompt Overlay - Hidden on Mobile */}
       {showAudioPrompt && (
         <motion.div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center cursor-pointer"
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 items-center justify-center cursor-pointer hidden sm:flex"
           onClick={handleAudioPromptClick}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -1174,8 +1195,7 @@ export default function Home() {
               Portfolio
             </div>
             <div className="text-xs sm:text-sm mb-4 sm:mb-6 text-gray-300 leading-relaxed">
-              Experience an immersive journey through my professional matrix<br />
-              <span className="text-xs text-gray-500">Complete with cyberpunk sound effects</span>
+              Experience an immersive journey through my professional matrix
             </div>
             <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm text-cyber-primary bg-cyber-dark/50 px-3 sm:px-4 py-2 rounded border border-cyber-primary/20">
               <span>CLICK TO CONTINUE</span>
