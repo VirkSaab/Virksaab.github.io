@@ -1347,13 +1347,6 @@ export default function Home() {
                 }
               </p>
               
-              {/* Audio Status Indicator */}
-          <div className="flex items-center justify-center mt-2 space-x-2 text-xs">
-            <div className="w-2 h-2 rounded-full bg-cyber-primary animate-pulse"></div>
-            <span className="font-mono text-cyber-primary">
-              AUDIO: SYSTEM ACTIVE
-            </span>
-          </div>
             </motion.div>
           </div>
 
