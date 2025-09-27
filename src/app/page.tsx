@@ -98,13 +98,13 @@ const useCyberpunkSounds = () => {
     switch (type) {
 
       case 'hover':
-        // Quick tech beep
+        // Very subtle tech beep
         oscillator.frequency.setValueAtTime(900, now)
-        oscillator.frequency.exponentialRampToValueAtTime(950, now + 0.02)
+        oscillator.frequency.exponentialRampToValueAtTime(950, now + 0.015)
         filterNode.frequency.setValueAtTime(2500, now)
-        gainNode.gain.setValueAtTime(0.04, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.04)
-        oscillator.type = 'square'
+        gainNode.gain.setValueAtTime(0.025, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.03)
+        oscillator.type = 'sine'
         break
 
       case 'open':
