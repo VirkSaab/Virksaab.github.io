@@ -108,18 +108,15 @@ const useCyberpunkSounds = () => {
         break
 
       case 'open':
-        // Futuristic sci-fi interface activation sound (like Matrix/Blade Runner)
-        oscillator.frequency.setValueAtTime(200, now)
-        oscillator.frequency.exponentialRampToValueAtTime(800, now + 0.08)
-        oscillator.frequency.exponentialRampToValueAtTime(1200, now + 0.16)
-        oscillator.frequency.exponentialRampToValueAtTime(600, now + 0.24)
-        filterNode.frequency.setValueAtTime(400, now)
-        filterNode.frequency.exponentialRampToValueAtTime(4000, now + 0.16)
-        filterNode.frequency.exponentialRampToValueAtTime(1500, now + 0.3)
-        gainNode.gain.setValueAtTime(0.12, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.08, now + 0.1)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.35)
-        oscillator.type = 'square'
+        // Subtle tech activation sound - like hover but slightly different
+        oscillator.frequency.setValueAtTime(800, now)
+        oscillator.frequency.exponentialRampToValueAtTime(1000, now + 0.03)
+        oscillator.frequency.exponentialRampToValueAtTime(1100, now + 0.06)
+        filterNode.frequency.setValueAtTime(2000, now)
+        filterNode.frequency.exponentialRampToValueAtTime(3000, now + 0.06)
+        gainNode.gain.setValueAtTime(0.05, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.08)
+        oscillator.type = 'sine'
         break
 
       case 'close':
