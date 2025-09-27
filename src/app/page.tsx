@@ -1159,24 +1159,25 @@ export default function Home() {
           transition={{ duration: 0.3 }}
         >
           <motion.div
-            className="text-center p-8 border border-cyber-primary/30 bg-cyber-dark/90 rounded-lg backdrop-blur-md max-w-md mx-4"
+            className="text-center p-4 sm:p-8 border border-cyber-primary/30 bg-cyber-dark/90 rounded-lg backdrop-blur-md max-w-sm sm:max-w-md mx-4"
             initial={{ scale: 0.9, y: 20 }}
             animate={{ scale: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="text-3xl mb-2 text-cyber-primary font-bold">
+            <div className="text-2xl sm:text-3xl mb-2 text-cyber-primary font-bold">
               WELCOME
             </div>
-            <div className="text-lg mb-4 text-gray-200">
+            <div className="text-base sm:text-lg mb-3 sm:mb-4 text-gray-200">
               to Jitender Singh's
             </div>
-            <div className="text-2xl mb-6 text-cyber-primary glitch-text font-bold">
+            <div className="text-xl sm:text-2xl mb-4 sm:mb-6 text-cyber-primary glitch-text font-bold">
               Portfolio
             </div>
-            <div className="text-sm mb-6 text-gray-300">
+            <div className="text-xs sm:text-sm mb-4 sm:mb-6 text-gray-300 leading-relaxed">
               Experience an immersive journey through my professional matrix<br />
+              <span className="text-xs text-gray-500">Complete with cyberpunk sound effects</span>
             </div>
-            <div className="flex items-center justify-center space-x-2 text-sm text-cyber-primary bg-cyber-dark/50 px-4 py-2 rounded border border-cyber-primary/20">
+            <div className="flex items-center justify-center space-x-2 text-xs sm:text-sm text-cyber-primary bg-cyber-dark/50 px-3 sm:px-4 py-2 rounded border border-cyber-primary/20">
               <span>CLICK TO CONTINUE</span>
               <div className="w-2 h-2 rounded-full bg-cyber-primary animate-pulse ml-2"></div>
             </div>
