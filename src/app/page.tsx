@@ -108,25 +108,33 @@ const useCyberpunkSounds = () => {
         break
 
       case 'open':
-        // Professional access granted sound
-        oscillator.frequency.setValueAtTime(440, now)
-        oscillator.frequency.exponentialRampToValueAtTime(880, now + 0.06)
-        oscillator.frequency.exponentialRampToValueAtTime(1320, now + 0.12)
-        filterNode.frequency.setValueAtTime(1000, now)
-        filterNode.frequency.exponentialRampToValueAtTime(6000, now + 0.12)
-        gainNode.gain.setValueAtTime(0.1, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.02, now + 0.15)
-        oscillator.type = 'sawtooth'
+        // Futuristic sci-fi interface activation sound (like Matrix/Blade Runner)
+        oscillator.frequency.setValueAtTime(200, now)
+        oscillator.frequency.exponentialRampToValueAtTime(800, now + 0.08)
+        oscillator.frequency.exponentialRampToValueAtTime(1200, now + 0.16)
+        oscillator.frequency.exponentialRampToValueAtTime(600, now + 0.24)
+        filterNode.frequency.setValueAtTime(400, now)
+        filterNode.frequency.exponentialRampToValueAtTime(4000, now + 0.16)
+        filterNode.frequency.exponentialRampToValueAtTime(1500, now + 0.3)
+        gainNode.gain.setValueAtTime(0.12, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.08, now + 0.1)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.35)
+        oscillator.type = 'square'
         break
 
       case 'close':
-        // Quick tech close sound
-        oscillator.frequency.setValueAtTime(1000, now)
-        oscillator.frequency.exponentialRampToValueAtTime(400, now + 0.06)
-        filterNode.frequency.setValueAtTime(3000, now)
-        gainNode.gain.setValueAtTime(0.07, now)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.08)
-        oscillator.type = 'square'
+        // Sci-fi system shutdown/deactivation sound (like Tron/Alien)
+        oscillator.frequency.setValueAtTime(1400, now)
+        oscillator.frequency.exponentialRampToValueAtTime(800, now + 0.05)
+        oscillator.frequency.exponentialRampToValueAtTime(300, now + 0.12)
+        oscillator.frequency.exponentialRampToValueAtTime(150, now + 0.25)
+        filterNode.frequency.setValueAtTime(2500, now)
+        filterNode.frequency.exponentialRampToValueAtTime(800, now + 0.15)
+        filterNode.frequency.exponentialRampToValueAtTime(200, now + 0.3)
+        gainNode.gain.setValueAtTime(0.1, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.06, now + 0.08)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.35)
+        oscillator.type = 'sawtooth'
         break
 
       case 'shuffle':
