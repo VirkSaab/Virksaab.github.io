@@ -3,6 +3,106 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
+// Cyberpunk Sound System
+const useCyberpunkSounds = () => {
+  const audioContextRef = useRef<AudioContext | null>(null)
+  const [isAudioEnabled, setIsAudioEnabled] = useState(false)
+
+  useEffect(() => {
+    // Initialize audio context on first user interaction
+    const initAudio = () => {
+      if (!audioContextRef.current) {
+        audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+        setIsAudioEnabled(true)
+      }
+    }
+
+    // Add event listeners for first user interaction
+    const events = ['click', 'touchstart', 'keydown']
+    events.forEach(event => {
+      document.addEventListener(event, initAudio, { once: true })
+    })
+
+    return () => {
+      events.forEach(event => {
+        document.removeEventListener(event, initAudio)
+      })
+    }
+  }, [])
+
+  const createCyberpunkSound = useCallback((type: 'click' | 'hover' | 'open' | 'close') => {
+    if (!audioContextRef.current || !isAudioEnabled) return
+
+    const ctx = audioContextRef.current
+    const now = ctx.currentTime
+
+    // Create oscillator for the main tone
+    const oscillator = ctx.createOscillator()
+    const gainNode = ctx.createGain()
+    const filterNode = ctx.createBiquadFilter()
+
+    // Connect nodes
+    oscillator.connect(filterNode)
+    filterNode.connect(gainNode)
+    gainNode.connect(ctx.destination)
+
+    // Configure sound based on type
+    switch (type) {
+      case 'click':
+        // Sharp, quick blip
+        oscillator.frequency.setValueAtTime(800, now)
+        oscillator.frequency.exponentialRampToValueAtTime(400, now + 0.1)
+        filterNode.frequency.setValueAtTime(2000, now)
+        gainNode.gain.setValueAtTime(0.1, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.15)
+        oscillator.type = 'square'
+        break
+
+      case 'hover':
+        // Subtle, soft beep
+        oscillator.frequency.setValueAtTime(600, now)
+        oscillator.frequency.exponentialRampToValueAtTime(650, now + 0.05)
+        filterNode.frequency.setValueAtTime(1500, now)
+        gainNode.gain.setValueAtTime(0.03, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.1)
+        oscillator.type = 'sine'
+        break
+
+      case 'open':
+        // Rising cyberpunk tone
+        oscillator.frequency.setValueAtTime(300, now)
+        oscillator.frequency.exponentialRampToValueAtTime(800, now + 0.2)
+        filterNode.frequency.setValueAtTime(1000, now)
+        filterNode.frequency.exponentialRampToValueAtTime(3000, now + 0.2)
+        gainNode.gain.setValueAtTime(0.08, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.25)
+        oscillator.type = 'sawtooth'
+        break
+
+      case 'close':
+        // Falling tone
+        oscillator.frequency.setValueAtTime(800, now)
+        oscillator.frequency.exponentialRampToValueAtTime(200, now + 0.15)
+        filterNode.frequency.setValueAtTime(2000, now)
+        gainNode.gain.setValueAtTime(0.06, now)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.2)
+        oscillator.type = 'triangle'
+        break
+    }
+
+    // Set filter type
+    filterNode.type = 'lowpass'
+    filterNode.Q.setValueAtTime(5, now)
+
+    // Start and stop oscillator
+    oscillator.start(now)
+    oscillator.stop(now + 0.3)
+
+  }, [isAudioEnabled])
+
+  return { playSound: createCyberpunkSound, isAudioEnabled }
+}
+
 interface FolderData {
   id: string
   title: string
@@ -22,6 +122,9 @@ export default function Home() {
   const [userInteracted, setUserInteracted] = useState(false)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const autoScrollRef = useRef<NodeJS.Timeout | null>(null)
+  
+  // Initialize cyberpunk sound system
+  const { playSound, isAudioEnabled } = useCyberpunkSounds()
 
   // Initialization cycling animation
   useEffect(() => {
@@ -1027,6 +1130,13 @@ export default function Home() {
                       const newSelected = selectedFolder === folder.id ? null : folder.id;
                       console.log('New selectedFolder will be:', newSelected);
                       
+                      // Play cyberpunk sound effect
+                      if (newSelected) {
+                        playSound('open'); // Opening a folder
+                      } else {
+                        playSound('close'); // Closing a folder
+                      }
+                      
                       setSelectedFolder(newSelected);
                       
                       // Check state after a brief delay
@@ -1129,6 +1239,14 @@ export default function Home() {
                     : 'Click folders to access data matrix'
                 }
               </p>
+              
+              {/* Audio Status Indicator */}
+              <div className="flex items-center justify-center mt-2 space-x-2 text-xs">
+                <div className={`w-2 h-2 rounded-full ${isAudioEnabled ? 'bg-cyber-primary animate-pulse' : 'bg-gray-600'}`}></div>
+                <span className={`font-mono ${isAudioEnabled ? 'text-cyber-primary' : 'text-gray-500'}`}>
+                  AUDIO: {isAudioEnabled ? 'ENABLED' : 'CLICK TO ENABLE'}
+                </span>
+              </div>
             </motion.div>
           </div>
 
@@ -1216,14 +1334,26 @@ export default function Home() {
                       // Don't allow interaction during initialization
                       if (isInitializing) return
                       
+                      const newSelected = selectedFolder === folder.id ? null : folder.id;
+                      
+                      // Play cyberpunk sound effect
+                      if (newSelected) {
+                        playSound('open'); // Opening a folder
+                      } else {
+                        playSound('close'); // Closing a folder
+                      }
+                      
                       // Move clicked folder to top of stack (end of array for highest z-index)
                       const newOrder = [...folderOrder.filter(id => id !== folder.id), folder.id]
                       setFolderOrder(newOrder)
                       
                       // Handle folder selection
-                      setSelectedFolder(selectedFolder === folder.id ? null : folder.id)
+                      setSelectedFolder(newSelected)
                     }}
-                    onHoverStart={() => setHoveredFolder(folder.id)}
+                    onHoverStart={() => {
+                      setHoveredFolder(folder.id)
+                      playSound('hover') // Play subtle hover sound
+                    }}
                     onHoverEnd={() => setHoveredFolder(null)}
                   >
                     {/* Folder Card */}
