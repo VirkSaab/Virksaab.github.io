@@ -1,20 +1,33 @@
-# Source files (keeping only built files for GitHub Pages)
-/src/
-/node_modules/
-/out/
-package*.json
-next.config.js
-tsconfig.json
-tailwind.config.js
-postcss.config.js
-next-env.d.ts
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
 
-# Development files
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
 .DS_Store
 *.pem
+
+# Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local env files
 .env*.local
+
+# Vercel
 .vercel
+
+# TypeScript
 *.tsbuildinfo
+next-env.d.ts
