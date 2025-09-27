@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jitender Singh - Portfolio</title>
+    <meta name="description" content="Jitender Singh's cyberpunk portfolio - AI/ML Engineer & Researcher">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        #portfolio-frame {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+        
+        /* Loading screen while iframe loads */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #000);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            z-index: 1000;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .cyber-text {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #00ff41;
+            animation: pulse 2s infinite;
+        }
+        
+        .loading-bar {
+            width: 300px;
+            height: 4px;
+            background: #333;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .loading-progress {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #00ff41, #00d4ff);
+            border-radius: 2px;
+            animation: loading 3s ease-in-out forwards;
+        }
+        
+        .status-text {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 60%; }
+            100% { width: 100%; }
+        }
+        
+        /* Fallback message if iframe fails */
+        .fallback {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            z-index: 2000;
+        }
+        
+        .fallback a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .fallback a:hover {
+            text-shadow: 0 0 5px #00d4ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loadingScreen">
+        <div class="cyber-text">INITIALIZING NEURAL INTERFACE</div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+        <div class="status-text">
+            Connecting to portfolio matrix...<br>
+            Please wait while the cyberpunk experience loads...
+        </div>
+    </div>
+    
+    <!-- Main Portfolio Iframe -->
+    <iframe 
+        id="portfolio-frame"
+        src="https://virksaab-github-io.vercel.app"
+        title="Jitender Singh Portfolio"
+        loading="lazy"
+        onload="hideLoading()"
+        onerror="showFallback()">
+    </iframe>
+    
+    <!-- Fallback if iframe fails -->
+    <div class="fallback" id="fallback">
+        <h2>🚀 Portfolio Loading...</h2>
+        <p>If the portfolio doesn't load, visit directly:</p>
+        <a href="https://virksaab-github-io.vercel.app" target="_blank">
+            https://virksaab-github-io.vercel.app
+        </a>
+    </div>
+
+    <script>
+        function hideLoading() {
+            setTimeout(() => {
+                const loading = document.getElementById('loadingScreen');
+                loading.classList.add('hidden');
+                // Remove loading screen completely after transition
+                setTimeout(() => {
+                    loading.style.display = 'none';
+                }, 500);
+            }, 1500); // Show loading for at least 1.5 seconds for effect
+        }
+        
+        function showFallback() {
+            const loading = document.getElementById('loadingScreen');
+            const fallback = document.getElementById('fallback');
+            loading.style.display = 'none';
+            fallback.style.display = 'block';
+        }
+        
+        // Auto-hide loading screen after 5 seconds as backup
+        setTimeout(() => {
+            if (!document.getElementById('loadingScreen').classList.contains('hidden')) {
+                hideLoading();
+            }
+        }, 5000);
+        
+        // Handle iframe communication for better UX
+        window.addEventListener('message', function(event) {
+            if (event.origin === 'https://virksaab-github-io.vercel.app') {
+                // Portfolio has loaded successfully
+                hideLoading();
+            }
+        });
+    </script>
+</body>
+</html>
