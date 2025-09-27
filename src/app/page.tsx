@@ -15,9 +15,8 @@ const useCyberpunkSounds = () => {
         try {
           audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
           setIsAudioEnabled(true)
-          console.log('🔊 Audio enabled immediately!')
         } catch (error) {
-          console.log('🔊 Audio requires user interaction, will enable on first click')
+          // Audio requires user interaction, will enable on first click
         }
       }
     }
@@ -49,7 +48,6 @@ const useCyberpunkSounds = () => {
         await ctx.resume()
         setIsAudioEnabled(true)
       } catch (error) {
-        console.log('🔊 Could not resume audio context')
         return
       }
     }
@@ -57,7 +55,6 @@ const useCyberpunkSounds = () => {
     const now = ctx.currentTime
 
     if (type === 'click') {
-      console.log('🔊 NEW CLICK SOUND PLAYING!')
       // Create a wood block / percussion click sound
       const oscillator = ctx.createOscillator()
       const gainNode = ctx.createGain()
@@ -1201,7 +1198,6 @@ export default function Home() {
           >
             <h1 className="text-2xl sm:text-3xl font-cyber font-bold text-cyber-primary mb-2">NEURAL COMMAND</h1>
             <p className="text-gray-400 text-sm">Tap folders to access data</p>
-            <p className="text-red-400 text-xs mt-2">DEBUG: Selected = {selectedFolder || 'none'}</p>
           </motion.div>
 
           {/* Mobile Folder Grid */}
@@ -1226,16 +1222,10 @@ export default function Home() {
                 >
                   <div
                     onClick={(e) => {
-                      console.log('=== CLICK DEBUG ===');
-                      console.log('Clicked folder:', folder.id);
-                      console.log('Current selectedFolder:', selectedFolder);
-                      console.log('Are they equal?', selectedFolder === folder.id);
-                      
                       e.preventDefault();
                       e.stopPropagation();
                       
                       const newSelected = selectedFolder === folder.id ? null : folder.id;
-                      console.log('New selectedFolder will be:', newSelected);
                       
                       // Play cyberpunk sound effect
                       if (newSelected) {
@@ -1245,11 +1235,6 @@ export default function Home() {
                       }
                       
                       setSelectedFolder(newSelected);
-                      
-                      // Check state after a brief delay
-                      setTimeout(() => {
-                        console.log('State after update:', selectedFolder);
-                      }, 100);
                     }}
                     className="p-4 sm:p-5 bg-gradient-to-r from-cyber-gray/30 to-cyber-gray/10 border transition-all duration-300 cursor-pointer touch-manipulation rounded-lg"
                     style={{
